@@ -1,0 +1,206 @@
+{
+   "_schemaVersion": "1.0.0",
+
+   "EasyPlot.figure":
+   {
+      "inputs":
+      [
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+   "EasyPlot.axes":
+   {
+      "inputs":
+      [
+         {"name":"figure", "kind":"required"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"}
+      ]
+   },
+   "EasyPlot.getSideAxes":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"position", "kind":"required", "type":"choices={'left','right','top','bottom'}"}
+      ]
+   },
+   "EasyPlot.setXLabelRow":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+   "EasyPlot.setYLabelRow":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+   "EasyPlot.setXLabelColumn":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+   "EasyPlot.setYLabelColumn":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },   
+   "EasyPlot.setXLim":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest','smallestOne'}"}
+      ]
+   },     
+   "EasyPlot.setYLim":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest'}"}
+      ]
+   },
+   "EasyPlot.exportFigure":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"filename", "kind":"required", "type":"char"},
+         {"name":"type", "kind":"namevalue", "type":"choices={'png','jpg','tiff','tiffRaw','eps','bmp','pdf'}"},
+         {"name":"dpi", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.createAxesAgainstAxes":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"ax", "kind":"required"},
+         {"name":"location", "kind":"required", "type":"choices={'top','left','bottom',right','leftTop','leftBottom','rightTop','rightBottom'}"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.createAxesAgainstFigure":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"location", "kind":"required", "type":"choices={'leftTop','leftBottom','rightTop','rightBottom'}"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.colorbar":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"location", "kind":"namevalue", "type":"choices={'leftTop','leftBottom','rightTop','rightBottom'}"},
+         {"name":"label", "kind":"namevalue", "type":"char"},
+         {"name":"colormap", "kind":"namevalue", "type":"numeric"},
+         {"name":"zeroCenter", "kind":"namevalue", "type":"logical"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.QuickPlot.rasterPlot":
+   {
+      "inputs":
+      [
+         {"name":"spike_times", "kind":"optional"},
+         {"name":"tStart", "kind":"namevalue", "type":"numeric"},
+         {"name":"tEnd", "kind":"namevalue", "type":"numeric"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.QuickPlot.PSTH":
+   {
+      "inputs":
+      [
+         {"name":"spike_times", "kind":"required"},
+         {"name":"trigger_times", "kind":"required"},
+         {"name":"tPre", "kind":"namevalue", "type":"numeric"},
+         {"name":"tPost", "kind":"namevalue", "type":"numeric"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"binWidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"gaussian_kernel", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.addHandle":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"handle", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.markAxes":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"axes_all", "kind":"required"},
+         {"name":"marker", "kind":"required"},
+         {"name":"xShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"}     
+      ]
+   }   
+}
