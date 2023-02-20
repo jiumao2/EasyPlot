@@ -4,7 +4,7 @@ function PSTH(spike_times, trigger_times, varargin)
     Width = 5;
     Height = 5;
     binWidth = 20;
-    gaussian_kernel = 0;
+    gaussian_kernel = 20;
     tPre = -500;
     tPost = 500;
 
@@ -39,7 +39,7 @@ function PSTH(spike_times, trigger_times, varargin)
     params.post = tPost;
     params.binwidth = binWidth;
     [psth, tpsth] = jpsth(spike_times, trigger_times, params);
-    psth = smoothdata(psth,'gaussian',gaussian_kernel);
+    psth = smoothdata(psth,'gaussian',gaussian_kernel*5/binWidth);
 
     plot(ax,tpsth,psth,'k-')
     xlabel(ax,'time')

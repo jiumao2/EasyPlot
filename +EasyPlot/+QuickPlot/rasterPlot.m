@@ -52,7 +52,7 @@ function rasterPlot(spike_times, varargin)
     xlabel(ax,'time')
     ylabel(ax,'Neurons')
     EasyPlot.setYLim(ax, [0.5,length(spike_times)+0.5]);
-    yticks(ax,1:length(spike_times))
+    yticks(ax,[1,length(spike_times)])
 
     EasyPlot.cropFigure(fig)
 end
