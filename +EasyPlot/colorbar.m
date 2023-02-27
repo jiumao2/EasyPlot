@@ -33,7 +33,7 @@ function handle = colorbar(axes, varargin)
             elseif strcmpi(varargin{k},'Height')
                 handle.Position(4) = varargin{k+1};
             else
-                error('Wrong argument!');
+                set(handle,varargin{k},varargin{k+1});
             end
         end
     end

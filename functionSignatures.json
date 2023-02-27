@@ -27,7 +27,9 @@
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
          {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
-         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"}
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
    "EasyPlot.getSideAxes":
@@ -110,7 +112,11 @@
          {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
-         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -126,7 +132,11 @@
          {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
-         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -202,5 +212,23 @@
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"char"}     
       ]
-   }   
+   },
+
+   "EasyPlot.setXTicks":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"}   
+      ]
+   },  
+
+   "EasyPlot.setYTicks":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"}   
+      ]
+   } 
 }

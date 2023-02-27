@@ -22,6 +22,10 @@ function handle = axes(fig, varargin)
                 handle.Position(3) = varargin{k+1};
             elseif strcmpi(varargin{k},'Height')
                 handle.Position(4) = varargin{k+1};
+            elseif strcmpi(varargin{k},'XAxisVisible')
+                handle.XAxis.Visible = varargin{k+1};
+            elseif strcmpi(varargin{k},'YAxisVisible')
+                handle.YAxis.Visible = varargin{k+1};
             else
                 set(handle,varargin{k},varargin{k+1});
             end
