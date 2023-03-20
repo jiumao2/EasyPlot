@@ -29,9 +29,111 @@
          {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
-         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"YTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"XTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"YTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"XTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"XGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"XLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XColor", "kind":"namevalue", "type":"char"},
+         {"name":"YColor", "kind":"namevalue", "type":"char"}
+
       ]
    },
+
+   "EasyPlot.annotation":
+   {
+      "inputs":
+      [
+         {"name":"figure", "kind":"required"},
+         {"name":"type", "kind":"required", "type":"choices={'line','arrow','doublearrow','textarrow','rectangle','ellipse','textbox'}"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"X", "kind":"namevalue", "type":"numeric"},
+         {"name":"Y", "kind":"namevalue", "type":"numeric"},
+         {"name":"Units", "kind":"namevalue", "type":"choices={'centimeters','normalized','inches','pixels','points','characters'}"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"HorizontalAlignment","kind":"namevalue","type":"choices={'left','center','right'}"},
+         {"name":"VerticalAlignment","kind":"namevalue","type":"choices={'top','middle','bottom'}"},
+         {"name":"Color", "kind":"namevalue", "type":"char"},
+         {"name":"BackgroundColor", "kind":"namevalue", "type":"char"},
+         {"name":"EdgeColor", "kind":"namevalue", "type":"char"},
+         {"name":"LineWidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"LineStyle", "kind":"namevalue", "type":"char"},
+         {"name":"Margin", "kind":"namevalue", "type":"numeric"},
+         {"name":"String", "kind":"namevalue", "type":"char"},
+         {"name":"Interpreter", "kind":"namevalue", "type":"choices={'tex','latex','none'}"},
+         {"name":"FitBoxToText", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"Rotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"EdgeAlpha", "kind":"namevalue", "type":"numeric"}
+      ]
+   },  
+
+   "EasyPlot.truncAxis":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"X", "kind":"namevalue", "type":"numeric"},
+         {"name":"Y", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.setGeneralXLabel":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.setGeneralTitle":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
    "EasyPlot.getSideAxes":
    {
       "inputs":
@@ -116,7 +218,44 @@
          {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
-         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"YTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"XTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"YTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"XTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"XGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"XLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XColor", "kind":"namevalue", "type":"char"},
+         {"name":"YColor", "kind":"namevalue", "type":"char"}
       ]
    },
 
@@ -136,7 +275,44 @@
          {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
-         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"}
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"YTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"XTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"YTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"XTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"XGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"XLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XColor", "kind":"namevalue", "type":"char"},
+         {"name":"YColor", "kind":"namevalue", "type":"char"}
       ]
    },
 
@@ -230,5 +406,119 @@
          {"name":"axes_all", "kind":"required"},
          {"name":"ticks", "kind":"required", "type":"numeric"}   
       ]
-   } 
+   },
+
+   "EasyPlot.set":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"YTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"XTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"YTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"XTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"XGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"XLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XColor", "kind":"namevalue", "type":"char"},
+         {"name":"YColor", "kind":"namevalue", "type":"char"}
+      ]
+   },
+
+   "EasyPlot.createGridAxes":
+   {
+      "inputs":
+      [
+         {"name":"fig", "kind":"required"},
+         {"name":"nRow", "kind":"required", "type":"numeric"},
+         {"name":"nColumn", "kind":"required", "type":"numeric"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
+         {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YTickLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTick", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabel", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelRotation", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"YTickLabelHorizontalAlignment", "kind":"namevalue", "type":"choices={'left','center','right'}"},
+         {"name":"XTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"YTickLabelVerticalAlignment", "kind":"namevalue", "type":"choices={'top','middle','bottom'}"},
+         {"name":"XTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"YTickLabelFontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"XTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"XTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"YTickLabelFontName", "kind":"namevalue", "type":"char"},
+         {"name":"XGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorGrid", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"YMinorTick", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"XScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
+         {"name":"XLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XColor", "kind":"namevalue", "type":"char"},
+         {"name":"YColor", "kind":"namevalue", "type":"char"}
+      ]
+   }   
 }

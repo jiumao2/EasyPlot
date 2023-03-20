@@ -21,6 +21,7 @@ classdef DefaultValue
         FontName = 'Arial';
         FontSizeTitle = 12;
         FontSize = 8;
+        FontWeight = 'normal';
 
         % Color
         Colormap = parula;

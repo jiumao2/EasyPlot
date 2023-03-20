@@ -1,4 +1,5 @@
 function cropFigure(fig)
+    drawnow;
     top = -Inf;
     bottom = Inf;
     left = Inf;
