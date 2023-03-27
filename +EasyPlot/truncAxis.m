@@ -41,6 +41,8 @@ if isempty(Xtrunc)
     ax2.YLim = [Ytrunc(2),axisYLim(2)];
 
     ax.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
+
+    ax2.Position = ax.Position;
     ax2.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
     ax2.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
 
@@ -57,8 +59,8 @@ if isempty(Xtrunc)
     end
     createSlash([ax.Position(1)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
     createSlash([ax.Position(1)-.2,ax2.Position(2)-.2,.4,.4]);
-    createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
-    createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)-.2,.4,.4]);
+%     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
+%     createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)-.2,.4,.4]);
 elseif isempty(Ytrunc) 
     ax2 = copyAxes(ax);
 
@@ -69,6 +71,7 @@ elseif isempty(Ytrunc)
     ax2.XLim = [Xtrunc(2),axisXLim(2)];
 
     ax.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
+
     ax2.Position  =  ax.Position;
     ax2.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
     ax2.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
@@ -86,8 +89,8 @@ elseif isempty(Ytrunc)
     end
     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)-.2,.4,.4]);
     createSlash([ax2.Position(1)-.2,ax.Position(2)-.2,.4,.4]);
-    createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
-    createSlash([ax2.Position(1)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
+%     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
+%     createSlash([ax2.Position(1)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
 elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
     ax2 = copyAxes(ax);
     ax3 = copyAxes(ax);
@@ -113,13 +116,19 @@ elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
 
     ax.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
     ax.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
+
+    ax2.Position = ax.Position;
     ax2.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
     ax2.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
     ax2.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
+
+    ax3.Position = ax.Position;
     ax3.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
     ax3.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
     ax3.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
     ax3.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
+
+    ax4.Position = ax.Position;
     ax4.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
     ax4.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
     ax4.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
@@ -147,12 +156,12 @@ elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
     end
     createSlash([ax.Position(1)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
     createSlash([ax.Position(1)-.2,ax2.Position(2)-.2,.4,.4]);
-    createSlash([ax4.Position(1)+ax4.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
-    createSlash([ax4.Position(1)+ax4.Position(3)-.2,ax2.Position(2)-.2,.4,.4]);
+%     createSlash([ax4.Position(1)+ax4.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
+%     createSlash([ax4.Position(1)+ax4.Position(3)-.2,ax2.Position(2)-.2,.4,.4]);
     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)-.2,.4,.4]);
-    createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
+%     createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
     createSlash([ax4.Position(1)-.2,ax.Position(2)-.2,.4,.4]);
-    createSlash([ax4.Position(1)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
+%     createSlash([ax4.Position(1)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
 end
 
 ax.Units = "centimeters";
