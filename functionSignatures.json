@@ -520,5 +520,22 @@
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"}
       ]
-   }   
+   },
+
+   "EasyPlot.plotShaded":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"x", "kind":"required", "type":"numeric"},
+         {"name":"y", "kind":"required", "type":"numeric"},
+         {"name":"lineColor", "kind":"namevalue"},
+         {"name":"shadedColor", "kind":"namevalue"},
+         {"name":"lineWidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"alpha", "kind":"namevalue", "type":"numeric"},
+         {"name":"axis", "kind":"namevalue", "type":"choices={'X','Y'}"},
+         {"name":"drawLine", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"marker", "kind":"namevalue", "type": "char"}  
+      ]
+   }  
 }

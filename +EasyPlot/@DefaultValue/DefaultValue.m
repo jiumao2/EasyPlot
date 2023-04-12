@@ -27,6 +27,10 @@ classdef DefaultValue
         Colormap = parula;
         ColormapDiverging = EasyPlot.ColorMap.Diverging.seismic;
         ColormapDivergingWhitePosition = 133/256;
+        Colororder = colororder;
+
+        % Line
+        LineWidth = 0.5;
 
         % Export
         ExportFormattype = 'png';
