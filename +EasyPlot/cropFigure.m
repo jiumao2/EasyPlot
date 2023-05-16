@@ -46,4 +46,7 @@ function cropFigure(fig)
             fig.UserData.OtherHandles{k}.Position(2) = fig.UserData.OtherHandles{k}.Position(2)-(bottom-fig.UserData.MarginBottom);    
         end
     end
+
+    fig.Position(1) = 0.5;
+    fig.Position(2) = 1.5;
 end
