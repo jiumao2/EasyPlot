@@ -1,8 +1,12 @@
 function handle = colorbar(axes, varargin)
+    % keep the position of the axes unchanged
+    position_raw = axes.Position;
+
     handle = colorbar(axes,...
         'Units', EasyPlot.DefaultValue.Units,...
         'FontName',EasyPlot.DefaultValue.FontName,...
         'FontSize',EasyPlot.DefaultValue.FontSize);
+    axes.Position = position_raw;
 
     handle.UserData.MarginLeft = EasyPlot.DefaultValue.AxesMarginLeft;
     handle.UserData.MarginRight = EasyPlot.DefaultValue.AxesMarginRight;
@@ -10,7 +14,7 @@ function handle = colorbar(axes, varargin)
     handle.UserData.MarginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
 
     cmap = EasyPlot.DefaultValue.Colormap;
-    zeroCenter = false;
+    zeroCenter = 'off';
 
     if nargin>1
         for k = 1:2:size(varargin,2)
@@ -38,7 +42,7 @@ function handle = colorbar(axes, varargin)
         end
     end
 
-    if zeroCenter
+    if strcmpi(zeroCenter, 'on')
         cLim = axes.CLim;
         cmap(1:round((2*EasyPlot.DefaultValue.ColormapDivergingWhitePosition-1)*size(cmap,1)),:) = [];
         if cLim(2) > -cLim(1)

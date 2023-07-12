@@ -26,27 +26,33 @@ function xLimOut = setXLim(all_axes,mode)
         if strcmpi(mode,'largest')
             xLimLeft = Inf;
             xLimRight = -Inf;
-            for k = 1:length(all_axes)
-                left = all_axes{k}.XLim(1);
-                right = all_axes{k}.XLim(2);
-                xLimLeft = min(xLimLeft,left);
-                xLimRight = max(xLimRight,right);
+            for k = 1:size(all_axes,1)
+                for j = 1:size(all_axes,2)
+                    left = all_axes{k,j}.XLim(1);
+                    right = all_axes{k,j}.XLim(2);
+                    xLimLeft = min(xLimLeft,left);
+                    xLimRight = max(xLimRight,right);
+                end
             end
             xLimOut = [xLimLeft, xLimRight];
         elseif strcmpi(mode,'largestOne')
             diffOut = 0;
-            for k = 1:length(all_axes)
-                if diffOut < diff(all_axes{k}.XLim)
-                    xLimOut = all_axes{k}.XLim;
-                    diffOut = diff(all_axes{k}.XLim);
+            for k = 1:size(all_axes,1)
+                for j = 1:size(all_axes,2)
+                    if diffOut < diff(all_axes{k,j}.XLim)
+                        xLimOut = all_axes{k,j}.XLim;
+                        diffOut = diff(all_axes{k,j}.XLim);
+                    end
                 end
             end
         elseif strcmpi(mode,'smallestOne')
             diffOut = Inf;
-            for k = 1:length(all_axes)
-                if diffOut > diff(all_axes{k}.XLim)
-                    xLimOut = all_axes{k}.XLim;
-                    diffOut = diff(all_axes{k}.XLim);
+            for k = 1:size(all_axes,1)
+                for j = 1:size(all_axes,2)
+                    if diffOut > diff(all_axes{k,j}.XLim)
+                        xLimOut = all_axes{k,j}.XLim;
+                        diffOut = diff(all_axes{k,j}.XLim);
+                    end
                 end
             end            
         else
@@ -54,8 +60,10 @@ function xLimOut = setXLim(all_axes,mode)
         end
     end
     
-    for k = 1:length(all_axes)
-        set(all_axes{k},'XLim',xLimOut);
+    for k = 1:size(all_axes,1)
+        for j = 1:size(all_axes,2)
+            set(all_axes{k,j},'XLim',xLimOut);
+        end
     end
 
 end

@@ -324,7 +324,7 @@
          {"name":"location", "kind":"namevalue", "type":"choices={'leftTop','leftBottom','rightTop','rightBottom'}"},
          {"name":"label", "kind":"namevalue", "type":"char"},
          {"name":"colormap", "kind":"namevalue", "type":"numeric"},
-         {"name":"zeroCenter", "kind":"namevalue", "type":"logical"},
+         {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"Width", "kind":"namevalue", "type":"numeric"},
          {"name":"Position", "kind":"namevalue", "type":"numeric"},
@@ -413,8 +413,6 @@
       "inputs":
       [
          {"name":"axes_all", "kind":"required"},
-         {"name":"Height", "kind":"namevalue", "type":"numeric"},
-         {"name":"Width", "kind":"namevalue", "type":"numeric"},
          {"name":"Position", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
@@ -537,5 +535,24 @@
          {"name":"drawLine", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"marker", "kind":"namevalue", "type": "char"}  
       ]
-   }  
+   },  
+
+   "EasyPlot.setCLim":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest'}"} 
+      ]
+   },
+
+   "EasyPlot.colormap":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"cmap", "kind":"required", "type":"numeric"},
+         {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"}
+      ]
+   }
 }

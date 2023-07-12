@@ -23,7 +23,7 @@ if nargin > 3
                 marginRight = varargin{k+1};
             case 'MarginTop'
                 marginTop = varargin{k+1};
-            case 'MarginBotton'
+            case 'MarginBottom'
                 marginBottom = varargin{k+1};
             case 'XAxisVisible'
                 XAxisVisible = varargin{k+1};
