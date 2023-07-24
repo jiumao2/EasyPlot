@@ -17,6 +17,8 @@ axisYScale = diff(axisYLim);
 truncRatio = 1/20;
 Xtrunc = [];
 Ytrunc = [];
+Xratio = NaN; % left/right
+Yratio = NaN; % bottom/top
 if nargin>1
     for i = 1:2:size(varargin,2)
         switch varargin{i}
@@ -24,6 +26,12 @@ if nargin>1
                 Xtrunc = varargin{i+1};
             case 'Y'
                 Ytrunc = varargin{i+1};
+            case 'Xratio'
+                Xratio = varargin{i+1};
+            case 'Yratio'
+                Yratio = varargin{i+1};
+            case 'truncRatio'
+                truncRatio = varargin{i+1};
             otherwise
                 error('wrong argument!');
         end
@@ -40,11 +48,15 @@ if isempty(Xtrunc)
     ax.YLim = [axisYLim(1),Ytrunc(1)];
     ax2.YLim = [Ytrunc(2),axisYLim(2)];
 
-    ax.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
+    if isnan(Yratio)
+        Yratio = (Ytrunc(1)-axisYLim(1))/(axisYLim(2)-Ytrunc(2));
+    end
+
+    ax.Position(4) = axisPos(4)*(1-truncRatio)*Yratio/(1+Yratio);
 
     ax2.Position = ax.Position;
     ax2.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
-    ax2.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
+    ax2.Position(4) = axisPos(4)*(1-truncRatio)*1/(1+Yratio);
 
     linkaxes([ax,ax2],'x');
 
@@ -61,6 +73,8 @@ if isempty(Xtrunc)
     createSlash([ax.Position(1)-.2,ax2.Position(2)-.2,.4,.4]);
 %     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
 %     createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)-.2,.4,.4]);
+    ax.Units = "centimeters";
+    ax2.Units = "centimeters";
 elseif isempty(Ytrunc) 
     ax2 = copyAxes(ax);
 
@@ -70,11 +84,15 @@ elseif isempty(Ytrunc)
     ax.XLim = [axisXLim(1),Xtrunc(1)];
     ax2.XLim = [Xtrunc(2),axisXLim(2)];
 
-    ax.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
+    if isnan(Xratio)
+        Xratio = (Xtrunc(1)-axisXLim(1))/(axisXLim(2)-Xtrunc(2));
+    end
+
+    ax.Position(3) = axisPos(3)*(1-truncRatio)*Xratio/(1+Xratio);
 
     ax2.Position  =  ax.Position;
     ax2.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
-    ax2.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
+    ax2.Position(3) = axisPos(3)*(1-truncRatio)*1/(1+Xratio);
 
     linkaxes([ax,ax2],'y')
 
@@ -91,6 +109,8 @@ elseif isempty(Ytrunc)
     createSlash([ax2.Position(1)-.2,ax.Position(2)-.2,.4,.4]);
 %     createSlash([ax.Position(1)+ax.Position(3)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
 %     createSlash([ax2.Position(1)-.2,ax.Position(2)+ax.Position(4)-.2,.4,.4]);
+    ax.Units = "centimeters";
+    ax2.Units = "centimeters";
 elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
     ax2 = copyAxes(ax);
     ax3 = copyAxes(ax);
@@ -114,24 +134,31 @@ elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
     ax4.XLim = [Xtrunc(2),axisXLim(2)];
     ax4.YLim = [axisYLim(1),Ytrunc(1)];
 
-    ax.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
-    ax.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
+    if isnan(Xratio)
+        Xratio = (Xtrunc(1)-axisXLim(1))/(axisXLim(2)-Xtrunc(2));
+    end    
+    if isnan(Yratio)
+        Yratio = (Ytrunc(1)-axisYLim(1))/(axisYLim(2)-Ytrunc(2));
+    end
+
+    ax.Position(3) = axisPos(3)*(1-truncRatio)*Xratio/(1+Xratio);
+    ax.Position(4) = axisPos(4)*(1-truncRatio)*Yratio/(1+Yratio);
 
     ax2.Position = ax.Position;
     ax2.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
-    ax2.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(Xtrunc(1)-axisXLim(1));
-    ax2.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
+    ax2.Position(3) = axisPos(3)*(1-truncRatio)*Xratio/(1+Xratio);
+    ax2.Position(4) = axisPos(4)*(1-truncRatio)*1/(1+Yratio);
 
     ax3.Position = ax.Position;
     ax3.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
     ax3.Position(2) = axisPos(2)+ax.Position(4)+axisPos(4)*truncRatio;
-    ax3.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
-    ax3.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(axisYLim(2)-Ytrunc(2));
+    ax3.Position(3) = axisPos(3)*(1-truncRatio)*1/(1+Xratio);
+    ax3.Position(4) = axisPos(4)*(1-truncRatio)*1/(1+Yratio);
 
     ax4.Position = ax.Position;
     ax4.Position(1) = axisPos(1)+ax.Position(3)+axisPos(3)*truncRatio;
-    ax4.Position(3) = axisPos(3)*(1-truncRatio)/(axisXScale-diff(Xtrunc))*(axisXLim(2)-Xtrunc(2));
-    ax4.Position(4) = axisPos(4)*(1-truncRatio)/(axisYScale-diff(Ytrunc))*(Ytrunc(1)-axisYLim(1));
+    ax4.Position(3) = axisPos(3)*(1-truncRatio)*1/(1+Xratio);
+    ax4.Position(4) = axisPos(4)*(1-truncRatio)*Yratio/(1+Yratio);
 
     linkaxes([ax3,ax2],'y');
     linkaxes([ax4,ax3],'x');
@@ -162,10 +189,12 @@ elseif ~isempty(Xtrunc) && ~isempty(Ytrunc)
 %     createSlash([ax.Position(1)+ax.Position(3)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
     createSlash([ax4.Position(1)-.2,ax.Position(2)-.2,.4,.4]);
 %     createSlash([ax4.Position(1)-.2,ax2.Position(2)+ax2.Position(4)-.2,.4,.4]);
-end
 
-ax.Units = "centimeters";
-ax2.Units = "centimeters";
+    ax.Units = "centimeters";
+    ax2.Units = "centimeters";
+    ax3.Units = "centimeters";
+    ax4.Units = "centimeters";
+end
 
     function newAX = copyAxes(ax)
         axStruct = get(ax);

@@ -110,7 +110,10 @@
       [
          {"name":"axes", "kind":"required"},
          {"name":"X", "kind":"namevalue", "type":"numeric"},
-         {"name":"Y", "kind":"namevalue", "type":"numeric"}
+         {"name":"Y", "kind":"namevalue", "type":"numeric"},
+         {"name":"Xratio", "kind":"namevalue", "type":"numeric"},
+         {"name":"Yratio", "kind":"namevalue", "type":"numeric"},
+         {"name":"truncRatio", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
