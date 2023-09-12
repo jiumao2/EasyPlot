@@ -34,6 +34,7 @@ function exportFigure(fig, filename, varargin)
 
     renderer = fig.Renderer;
     set(fig,'Renderer','painters');
+    set(fig,'PaperPosition', fig.Position);
     print(fig,filename,formattype,resolution);
     set(fig,'Renderer',renderer);
 end

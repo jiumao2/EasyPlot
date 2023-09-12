@@ -38,6 +38,10 @@ function handle = setGeneralXLabel(axes_all, label, varargin)
                 handle.UserData.MarginBottom = varargin{k+1};
             elseif strcmpi(varargin{k},'Height')
                 handle.Position(4) = varargin{k+1};
+            elseif strcmpi(varargin{k},'xShift')
+                handle.Position(1) = handle.Position(1)+varargin{k+1};
+            elseif strcmpi(varargin{k},'yShift')
+                handle.Position(2) = handle.Position(2)+varargin{k+1};
             else
                 set(handle,varargin{k},varargin{k+1});
             end

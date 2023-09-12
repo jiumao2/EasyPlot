@@ -6,6 +6,12 @@ function handle = colorbar(axes, varargin)
         'Units', EasyPlot.DefaultValue.Units,...
         'FontName',EasyPlot.DefaultValue.FontName,...
         'FontSize',EasyPlot.DefaultValue.FontSize);
+
+    position_raw_colorbar = handle.Position;
+    handle.Location = 'Manual';
+    handle.Position(1) = position_raw_colorbar(1)+position_raw(3)-axes.Position(3);
+    handle.Position(2) = position_raw_colorbar(2)+position_raw(4)-axes.Position(4);
+    handle.Position(3:4) = position_raw_colorbar(3:4);
     axes.Position = position_raw;
 
     handle.UserData.MarginLeft = EasyPlot.DefaultValue.AxesMarginLeft;
@@ -53,6 +59,6 @@ function handle = colorbar(axes, varargin)
             cmap = cmap(1:round(size(cmap,1)*percentCmap),:);
         end
     end
-
+    
     colormap(axes, cmap);
 end

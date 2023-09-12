@@ -123,7 +123,9 @@
       [
          {"name":"axes_all", "kind":"required"},
          {"name":"label", "kind":"required", "type":"char"},
-         {"name":"Height", "kind":"namevalue", "type":"numeric"}
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"xShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
@@ -133,7 +135,9 @@
       [
          {"name":"axes_all", "kind":"required"},
          {"name":"label", "kind":"required", "type":"char"},
-         {"name":"Height", "kind":"namevalue", "type":"numeric"}
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"xShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
@@ -556,6 +560,16 @@
          {"name":"axes_all", "kind":"required"},
          {"name":"cmap", "kind":"required", "type":"numeric"},
          {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"}
+      ]
+   },
+
+   "move":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"dx", "kind":"namevalue", "type":"numeric"},
+         {"name":"dy", "kind":"namevalue", "type":"numeric"}
       ]
    }
 }
