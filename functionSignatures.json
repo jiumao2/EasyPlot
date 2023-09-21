@@ -214,7 +214,7 @@
       [
          {"name":"fig", "kind":"required"},
          {"name":"ax", "kind":"required"},
-         {"name":"location", "kind":"required", "type":"choices={'top','left','bottom',right','leftTop','leftBottom','rightTop','rightBottom'}"},
+         {"name":"location", "kind":"required", "type":"choices={'top','left','bottom','right','leftTop','leftBottom','rightTop','rightBottom'}"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"Width", "kind":"namevalue", "type":"numeric"},
          {"name":"Position", "kind":"namevalue", "type":"numeric"},
