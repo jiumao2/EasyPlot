@@ -4,7 +4,9 @@ function setYTicks(axes_all, ticks)
         return
     end
 
-    for k = 1:length(axes_all)
-        yticks(axes_all{k}, ticks);
+    for k = 1:size(axes_all,1)
+        for j = 1:size(axes_all,2)
+            yticks(axes_all{k,j}, ticks);
+        end
     end
 end

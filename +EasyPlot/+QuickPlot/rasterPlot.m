@@ -18,7 +18,7 @@ function rasterPlot(spike_times, varargin)
             elseif strcmpi(varargin{k},'Height')
                 Height = varargin{k+1};
             else
-                error('Wrong argument!')
+                error('Wrong argument!');
             end
         end
     end
@@ -48,11 +48,11 @@ function rasterPlot(spike_times, varargin)
             y_all = [y_all, y];
         end
     end
-    plot(ax,x_all,y_all,'k-')
-    xlabel(ax,'time')
-    ylabel(ax,'Neurons')
+    plot(ax,x_all,y_all,'k-');
+    xlabel(ax,'time');
+    ylabel(ax,'Neurons');
     EasyPlot.setYLim(ax, [0.5,length(spike_times)+0.5]);
-    yticks(ax,[1,length(spike_times)])
+    yticks(ax,[1,length(spike_times)]);
 
-    EasyPlot.cropFigure(fig)
+    EasyPlot.cropFigure(fig);
 end

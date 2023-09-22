@@ -23,7 +23,7 @@ function PSTH(spike_times, trigger_times, varargin)
             elseif strcmpi(varargin{k},'gaussian_kernel')
                 gaussian_kernel = varargin{k+1};
             else
-                error('Wrong argument!')
+                error('Wrong argument!');
             end
         end
     end
@@ -41,11 +41,11 @@ function PSTH(spike_times, trigger_times, varargin)
     [psth, tpsth] = jpsth(spike_times, trigger_times, params);
     psth = smoothdata(psth,'gaussian',gaussian_kernel*5/binWidth);
 
-    plot(ax,tpsth,psth,'k-')
-    xlabel(ax,'time')
-    ylabel(ax,'firing rate (Hz)')
+    plot(ax,tpsth,psth,'k-');
+    xlabel(ax,'time');
+    ylabel(ax,'firing rate (Hz)');
 
-    EasyPlot.cropFigure(fig)
+    EasyPlot.cropFigure(fig);
     function [psth, tpsth, trialspxmat, tspkmat, trigtimes] = jpsth(spxtimes, trigtimes, params)
         % JY 8.9.2020
         % spktimes in ms
@@ -80,12 +80,12 @@ function PSTH(spike_times, trigger_times, varargin)
         
         tspkmat = (-pre):post;
         
-         [~, inan]=find(isnan(trialspxmat));
+        [~, inan] = find(isnan(trialspxmat));
         
-         spkmat = trialspxmat;
-         spkmat(:, inan)=[];
-         trialspxmat = spkmat;
-         trigtimes(inan) = [];
+        spkmat = trialspxmat;
+        spkmat(:, inan)=[];
+        trialspxmat = spkmat;
+        trigtimes(inan) = [];
          
         [spkhistos, ts ] = spikehisto(spkmat,1000, (pre+post)/binwidth);
         ts = ts*1000 - pre;

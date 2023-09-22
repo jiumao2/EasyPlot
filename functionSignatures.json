@@ -129,6 +129,18 @@
       ]
    },
 
+   "EasyPlot.setGeneralYLabel":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
+         {"name":"xShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
    "EasyPlot.setGeneralTitle":
    {
       "inputs":
@@ -563,7 +575,7 @@
       ]
    },
 
-   "move":
+   "EasyPlot.move":
    {
       "inputs":
       [
