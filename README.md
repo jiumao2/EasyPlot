@@ -58,4 +58,4 @@ EasyPlot.exportFigure(fig, 'test.png');
 ![test.png](./doc/test.png)
 
 ## Documentation
-- To be constructed
+- See [here](./Documentation.md)
