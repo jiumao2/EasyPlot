@@ -138,10 +138,13 @@ EasyPlot.exportFigure(fig, 'plotShaded');
 ```matlab
 fig = EasyPlot.figure();
 ax = EasyPlot.axes(fig, 'Width', 3, 'Height', 3, 'MarginLeft', 0.8);
-x = 0:0.1:10;
+x = 0:1:10;
 y = sin(x);
+rng(5);
 e = rand(size(x));
-EasyPlot.boundedLine(ax, x, y, e);
+EasyPlot.boundedLine(ax, x, y, e, 'k-');
+EasyPlot.cropFigure(fig);
+EasyPlot.exportFigure(fig, 'boundedLine');
 ```  
 ![](./doc/boundedLine.png)
 
