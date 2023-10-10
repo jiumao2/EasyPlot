@@ -1,11 +1,18 @@
-function plotShaded(ax,x,y,varargin)
+function [handle_patch, handle_line] = plotShaded(ax, x, y, varargin)
+%PLOTSHADED Plot a line with shaded area below
+%
+% EasyPlot.plotShaded(ax, [2,3,5], [1,0,2;3,4,5]);
+% EasyPlot.plotShaded(ax, [1,0,2;3,4,5], [2,3,5], 'axis', 'Y');
+% x: 1xn vector if axis == 'X';
+% y: 2xn matrix composed of two vectors which defines the area of the patch
+
 alpha = 0.25;
 axis = 'X';
 lineWidth = EasyPlot.DefaultValue.LineWidth;
 lineColor = EasyPlot.DefaultValue.Colororder(1,:);
 shadedColor = EasyPlot.DefaultValue.Colororder(1,:);
 marker = 'none';
-drawLine = 'on';
+drawLine = 'off';
 if nargin>3
     for k = 1:2:size(varargin,2)
         switch varargin{k}
@@ -44,7 +51,7 @@ elseif size(x,1)==1 && axis == 'Y'
 end
 
 if strcmp(drawLine, 'on')
-    plot(ax, x(1,:),y(1,:),...
+    handle_line = plot(ax, x(1,:),y(1,:),...
         'Color',lineColor,...
         'LineWidth',lineWidth,...
         'Marker',marker);
@@ -60,7 +67,7 @@ elseif size(x,1)==2
 end
 
 % plot shaded area
-patch(ax,px, py, 1,...
+handle_patch = patch(ax,px, py, 1,...
     'FaceColor', shadedColor,...
     'EdgeColor','none',...
     'FaceAlpha', alpha); 

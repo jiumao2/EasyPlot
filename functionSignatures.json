@@ -153,7 +153,7 @@
       ]
    },
 
-   "EasyPlot.getSideAxes":
+   "EasyPlot.Utils.getSideAxes":
    {
       "inputs":
       [
@@ -225,7 +225,7 @@
       "inputs":
       [
          {"name":"fig", "kind":"required"},
-         {"name":"ax", "kind":"required"},
+         {"name":"axes", "kind":"required"},
          {"name":"location", "kind":"required", "type":"choices={'top','left','bottom','right','leftTop','leftBottom','rightTop','rightBottom'}"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"Width", "kind":"namevalue", "type":"numeric"},
@@ -381,7 +381,7 @@
       ]
    },
 
-   "EasyPlot.addHandle":
+   "EasyPlot.Utils.addHandle":
    {
       "inputs":
       [
@@ -582,6 +582,23 @@
          {"name":"axes_all", "kind":"required"},
          {"name":"dx", "kind":"namevalue", "type":"numeric"},
          {"name":"dy", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.boundedLine":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"optional"},
+         {"name":"x", "kind":"required", "type":"numeric"},
+         {"name":"y", "kind":"required", "type":"numeric"},
+         {"name":"bound", "kind":"required", "type":"numeric"},
+         {"name":"lineSpec", "kind":"optional", "type":"char"},
+         {"name":"alpha", "kind": "optional", "type": "choices={'alpha'}"},
+         {"name":"transparency", "kind":"namevalue", "type": "numeric"},
+         {"name":"orientation", "kind":"namevalue", "type":"choices={'vert','horiz'}"},
+         {"name":"nanflag", "kind":"namevalue", "type":"choices={'fill','gap','remove'}"},
+         {"name":"cmap", "kind":"namevalue", "type":"numeric"}
       ]
    }
 }

@@ -46,5 +46,5 @@ function handle = annotation(fig, type, varargin)
         end
     end
 
-    EasyPlot.addHandle(fig, handle);    
+    EasyPlot.Utils.addHandle(fig, handle);
 end

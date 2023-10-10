@@ -113,7 +113,34 @@ EasyPlot.set({ax1, ax2, ax3}, 'MarginLeft', 0.8, 'MarginBottom', 0.8);
 
 ### Plotting methods
 - All plotting methods are the same as MATLAB, such as `plot`, `scatter`, `histogram`......
-- Do not add `EasyPlot` before these plotting methods.
+- Do not add `EasyPlot` before the MATLAB plotting methods.
+- Some useful methods are provided by EasyPlot.
+
+#### plotShaded
+- Plot a shaded area between two curves.
+```matlab
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig, 'Width', 3, 'Height', 3, 'MarginLeft', 0.8);
+x = 0:0.1:10;
+y1 = sin(x);
+y2 = cos(x);
+EasyPlot.plotShaded(ax, x, [y1;y2]);
+EasyPlot.cropFigure(fig);
+EasyPlot.exportFigure(fig, 'plotShaded');
+```
+![](./doc/plotShaded.png)
+
+#### boundedLine
+- Plot a line with shaded area. Useful to plot the mean and standard deviation / error bar.
+```matlab
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig, 'Width', 3, 'Height', 3, 'MarginLeft', 0.8);
+x = 0:0.1:10;
+y = sin(x);
+e = rand(size(x));
+EasyPlot.boundedLine(ax, x, y, e);
+```  
+![](./doc/boundedLine.png)
 
 ### Colormaps
 - EasyPlot adapts the colormaps from Matplotlib 3.0.  
