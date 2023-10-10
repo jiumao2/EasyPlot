@@ -47,6 +47,6 @@ function cropFigure(fig)
         end
     end
 
-    fig.Position(1) = 0.5;
-    fig.Position(2) = 1.5;
+    fig.Position(1) = EasyPlot.DefaultValue.PositionX;
+    fig.Position(2) = EasyPlot.DefaultValue.PositionY;
 end

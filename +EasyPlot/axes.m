@@ -8,6 +8,8 @@ function handle = axes(fig, varargin)
     handle.UserData.MarginRight = EasyPlot.DefaultValue.AxesMarginRight;
     handle.UserData.MarginTop = EasyPlot.DefaultValue.AxesMarginTop;
     handle.UserData.MarginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
+    handle.Position(3) = EasyPlot.DefaultValue.AxesWidth;
+    handle.Position(4) = EasyPlot.DefaultValue.AxesHeight;
     if nargin > 1
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'MarginLeft')

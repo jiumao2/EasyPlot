@@ -1,9 +1,5 @@
 function handle = createAxesAgainstFigure(fig, location, varargin)
     handle = EasyPlot.axes(fig);
-    handle.UserData.MarginLeft = EasyPlot.DefaultValue.AxesMarginLeft;
-    handle.UserData.MarginRight = EasyPlot.DefaultValue.AxesMarginRight;
-    handle.UserData.MarginTop = EasyPlot.DefaultValue.AxesMarginTop;
-    handle.UserData.MarginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
     if nargin > 3
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'MarginLeft')

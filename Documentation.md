@@ -173,6 +173,12 @@ Units = 'centimeters';
 NextPlot = 'add';
 Renderer = 'opengl';
 
+% Position
+AxesHeight = 3;
+AxesWidth = 3;
+PositionX = 0.5;
+PositionY = 1.5;
+
 % Margin
 FigureMarginLeft = 0.3;
 FigureMarginRight = 0.3;
