@@ -2,20 +2,23 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [EasyPlot documentation](#easyplot-documentation)
-  - [Basic usage](#basic-usage)
-    - [Layouts](#layouts)
-    - [Create figures / axes](#create-figures--axes)
-    - [Axes methods](#axes-methods)
-      - [[xyc]Lim methods](#xyclim-methods)
-      - [[xy]label methods](#xylabel-methods)
-      - [[xy]ticks methods](#xyticks-methods)
-      - [Move axes](#move-axes)
-      - [Using `set`](#using-set)
-      - [Truncate axes](#truncate-axes)
-    - [Plotting methods](#plotting-methods)
-    - [Colormaps](#colormaps)
-    - [Default settings](#default-settings)
-    - [Export](#export)
+
+- [Basic usage](#basic-usage)
+  - [Layouts](#layouts)
+  - [Create figures / axes](#create-figures--axes)
+  - [Axes methods](#axes-methods)
+    - [[xyc]Lim methods](#xyclim-methods)
+    - [[xy]label methods](#xylabel-methods)
+    - [[xy]ticks methods](#xyticks-methods)
+    - [Move axes](#move-axes)
+    - [Using `set`](#using-set)
+    - [Truncate axes](#truncate-axes)
+  - [Plotting methods](#plotting-methods)
+    - [plotShaded](#plotshaded)
+    - [boundedLine](#boundedline)
+  - [Colormaps](#colormaps)
+  - [Default settings](#default-settings)
+  - [Export](#export)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Basic usage  
