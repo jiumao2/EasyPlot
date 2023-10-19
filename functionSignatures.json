@@ -600,5 +600,35 @@
          {"name":"nanflag", "kind":"namevalue", "type":"choices={'fill','gap','remove'}"},
          {"name":"cmap", "kind":"namevalue", "type":"numeric"}
       ]
+   },
+
+   "EasyPlot.legend":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"legendNames", "kind":"required", "type":"cell"},
+         {"name":"location", "kind":"namevalue", "type":"choices={'north','south','east','west','northeast','northwest','southeast','southwest','northoutside','southoutside','eastoutside','westoutside','northeastoutside','northwestoutside','southeastoutside','southwestoutside','best','bestoutside','layout','none'}"},
+         {"name":"selectedPlots", "kind":"namevalue", "type":"Line"},
+         {"name":"Position", "kind":"namevalue", "type":"numeric"},
+         {"name":"Units", "kind":"namevalue", "type":"choices={'centimeters','normalized','inches','pixels','points','characters'}"},
+         {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"Interpreter", "kind":"namevalue", "type":"choices={'tex','latex','none'}"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
+      ]
+   },
+
+   "EasyPlot.QuickPlot.printChessboard":
+   {
+      "inputs":
+      [
+         {"name": "gridSize", "kind":"optional", "type":"numeric"}
+      ]
    }
 }

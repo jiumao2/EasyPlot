@@ -8,7 +8,7 @@ function handle = annotation(fig, type, varargin)
     marginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
 
     handle = annotation(fig, type,...
-        'Units','centimeters');
+        'Units', EasyPlot.DefaultValue.Units);
 
     if strcmpi(type, 'textarrow') || strcmpi(type, 'textbox')
         set(handle,...
