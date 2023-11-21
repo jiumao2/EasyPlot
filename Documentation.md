@@ -91,6 +91,14 @@ EasyPlot.setGeneralTitle({ax1, ax2, ax3}, 'Title');
 ```matlab
 % set the y ticks for multiple axes
 EasyPlot.setYTicks({ax1, ax2, ax3}, [0, 1, 2]);
+% EasyPlot.yticks is the same function
+EasyPlot.yticks({ax1, ax2, ax3}, [0, 1, 2]);
+
+% set the y tick labels for multiple axes
+EasyPlot.yticklabels({ax1, ax2, ax3}, [3, 4, 5]); % Both numeric array and cell array are supported
+
+% set the y ticks and tick labels together
+EasyPlot.setYTicksAndLabels({ax1, ax2, ax3}, [0, 1, 2], [3, 4, 5]);
 ```
 
 #### Move axes
@@ -134,6 +142,8 @@ EasyPlot.exportFigure(fig, 'plotShaded');
 ![](./doc/plotShaded.png)
 
 #### boundedLine
+> Adapted from: https://github.com/kakearney/boundedline-pkg  
+
 - Plot a line with shaded area. Useful to plot the mean and standard deviation / error bar.
 ```matlab
 fig = EasyPlot.figure();
@@ -163,6 +173,12 @@ EasyPlot.colormap(ax, cmap, 'zeroCenter', 'on');
 % Also you can do it when creating a colorbar
 EasyPlot.colorbar(ax, 'colormap', cmap, 'zeroCenter', 'on');
 ```
+
+### Violin plot
+> Bechtold, Bastian, 2016. Violin Plots for Matlab, Github Project  
+> https://github.com/bastibe/Violinplot-Matlab, DOI: 10.5281/zenodo.4559847  
+
+- See [here](https://github.com/bastibe/Violinplot-Matlab) for the documentation of violin plot.
 
 ### Default settings  
 - Scientific figures have different requirements from other figures.

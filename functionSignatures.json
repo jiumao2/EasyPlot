@@ -630,5 +630,118 @@
       [
          {"name": "gridSize", "kind":"optional", "type":"numeric"}
       ]
+   },
+
+   "EasyPlot.xticks":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.yticks":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.xticklabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.yticklabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.setXTicksAndLabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.setYTicksAndLabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.violinplot":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"data", "kind":"required", "type":"numeric"},
+         {"name":"cats", "kind":"required"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Bandwidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"ViolinColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"ViolinAlpha", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarkerSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"MedianMarkerSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"EdgeColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"BoxColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"MedianColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowData", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowNotches", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowMean", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowBox", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowMedian", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowWhiskers", "kind":"namevalue", "type":"numeric"},
+         {"name":"GroupOrder", "kind":"namevalue", "type":"cell"},
+         {"name":"HalfViolin", "kind":"namevalue", "type":"choices={'left','right','full'}"},
+         {"name":"QuartileStyle", "kind":"namevalue", "type":"choices={'shadow','boxplot','none'}"},
+         {"name":"DataStyle", "kind":"namevalue", "type":"choices={'scatter','histogram','none'}"}
+      ]
+   },
+
+   "EasyPlot.Units.Violin":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"data", "kind":"required", "type":"numeric"},
+         {"name":"pos", "kind":"required"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Bandwidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"ViolinColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"ViolinAlpha", "kind":"namevalue", "type":"numeric"},
+         {"name":"MarkerSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"MedianMarkerSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"EdgeColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"BoxColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"MedianColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowData", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowNotches", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowMean", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowBox", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowMedian", "kind":"namevalue", "type":"numeric"},
+         {"name":"ShowWhiskers", "kind":"namevalue", "type":"numeric"},
+         {"name":"HalfViolin", "kind":"namevalue", "type":"choices={'left','right','full'}"},
+         {"name":"QuartileStyle", "kind":"namevalue", "type":"choices={'shadow','boxplot','none'}"},
+         {"name":"DataStyle", "kind":"namevalue", "type":"choices={'scatter','histogram','none'}"}
+      ]
    }
 }
