@@ -17,6 +17,11 @@ A4_height = A4_height*scale;
 
 num_width = floor(A4_width/grid_size);
 num_height = floor(A4_height/grid_size);
+
+if mod(num_width,2) == mod(num_height, 2)
+    num_width = num_width-1;
+end
+
 margin_horizontal = (A4_width-num_width*grid_size)/2;
 margin_vertical = (A4_height-num_height*grid_size)/2;
 
@@ -58,6 +63,7 @@ ylim(ax, [0, num_height]);
 set(fig, 'PaperUnits', 'centimeters');
 set(fig, 'PaperOrientation', 'landscape');
 
-EasyPlot.exportFigure(fig, sprintf('Chessboard_%dmm',grid_size), 'dpi', 1200, 'type', 'pdf');
+EasyPlot.exportFigure(fig, sprintf('Chessboard_%dmm',grid_size/scale), 'dpi', 1200, 'type', 'pdf');
+EasyPlot.exportFigure(fig, sprintf('Chessboard_%dmm',grid_size/scale), 'dpi', 1200, 'type', 'png');
 close all;
 end
