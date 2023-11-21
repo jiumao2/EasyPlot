@@ -16,6 +16,7 @@
   - [Plotting methods](#plotting-methods)
     - [plotShaded](#plotshaded)
     - [boundedLine](#boundedline)
+    - [violinplot](#violinplot)
   - [Colormaps](#colormaps)
   - [Default settings](#default-settings)
   - [Export](#export)
@@ -158,6 +159,22 @@ EasyPlot.exportFigure(fig, 'boundedLine');
 ```  
 ![](./doc/boundedLine.png)
 
+#### violinplot
+> Bechtold, Bastian, 2016. Violin Plots for Matlab, Github Project  
+> https://github.com/bastibe/Violinplot-Matlab, DOI: 10.5281/zenodo.4559847  
+- A violin plot is an easy to read substitute for a box plot that replaces the box shape with a kernel density estimate of the data, and optionally overlays the data points itself.
+- See [here](https://github.com/bastibe/Violinplot-Matlab) for the documentation of violin plot.
+```matlab
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig, 'Width', 3, 'Height', 3, 'MarginLeft', 0.5, 'XAxisVisible', 'off');
+rng(1);
+x = [randn(100,1); randn(50,1)+5];
+EasyPlot.violinplot(ax, x);
+EasyPlot.cropFigure(fig);
+EasyPlot.exportFigure(fig, 'violinplot');
+```
+![](./doc/violinplot.png)
+
 ### Colormaps
 - EasyPlot adapts the colormaps from Matplotlib 3.0.  
 ```matlab
@@ -173,12 +190,6 @@ EasyPlot.colormap(ax, cmap, 'zeroCenter', 'on');
 % Also you can do it when creating a colorbar
 EasyPlot.colorbar(ax, 'colormap', cmap, 'zeroCenter', 'on');
 ```
-
-### Violin plot
-> Bechtold, Bastian, 2016. Violin Plots for Matlab, Github Project  
-> https://github.com/bastibe/Violinplot-Matlab, DOI: 10.5281/zenodo.4559847  
-
-- See [here](https://github.com/bastibe/Violinplot-Matlab) for the documentation of violin plot.
 
 ### Default settings  
 - Scientific figures have different requirements from other figures.
