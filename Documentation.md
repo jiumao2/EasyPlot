@@ -10,6 +10,7 @@
     - [[xyc]Lim methods](#xyclim-methods)
     - [[xy]label methods](#xylabel-methods)
     - [[xy]ticks methods](#xyticks-methods)
+    - [title methods](#title-methods)
     - [Move axes](#move-axes)
     - [Using `set`](#using-set)
     - [Truncate axes](#truncate-axes)
@@ -100,6 +101,12 @@ EasyPlot.yticklabels({ax1, ax2, ax3}, [3, 4, 5]); % Both numeric array and cell 
 
 % set the y ticks and tick labels together
 EasyPlot.setYTicksAndLabels({ax1, ax2, ax3}, [0, 1, 2], [3, 4, 5]);
+```
+
+#### title methods
+```matlab
+% set the title for multiple axes
+EasyPlot.setTitle({ax1, ax2, ax3}, 'Title', 'FontSize', 12, 'FontWeight', 'bold');
 ```
 
 #### Move axes

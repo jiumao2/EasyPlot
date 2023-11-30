@@ -32,7 +32,7 @@
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"XLabel", "kind":"namevalue", "type":"char"},
          {"name":"YLabel", "kind":"namevalue", "type":"char"},
          {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -87,7 +87,7 @@
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"HorizontalAlignment","kind":"namevalue","type":"choices={'left','center','right'}"},
          {"name":"VerticalAlignment","kind":"namevalue","type":"choices={'top','middle','bottom'}"},
          {"name":"Color", "kind":"namevalue", "type":"char"},
@@ -125,7 +125,10 @@
          {"name":"label", "kind":"required", "type":"char"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"xShift", "kind":"namevalue", "type":"numeric"},
-         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
 
@@ -137,7 +140,10 @@
          {"name":"label", "kind":"required", "type":"char"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"xShift", "kind":"namevalue", "type":"numeric"},
-         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
 
@@ -149,7 +155,10 @@
          {"name":"label", "kind":"required", "type":"char"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"xShift", "kind":"namevalue", "type":"numeric"},
-         {"name":"yShift", "kind":"namevalue", "type":"numeric"}
+         {"name":"yShift", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
 
@@ -166,7 +175,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
    "EasyPlot.setYLabelRow":
@@ -174,7 +186,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
    "EasyPlot.setXLabelColumn":
@@ -182,7 +197,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },
    "EasyPlot.setYLabelColumn":
@@ -190,7 +208,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
       ]
    },   
    "EasyPlot.setXLim":
@@ -240,7 +261,7 @@
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"XLabel", "kind":"namevalue", "type":"char"},
          {"name":"YLabel", "kind":"namevalue", "type":"char"},
          {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -297,7 +318,7 @@
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"XLabel", "kind":"namevalue", "type":"char"},
          {"name":"YLabel", "kind":"namevalue", "type":"char"},
          {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -405,7 +426,7 @@
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"}     
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}     
       ]
    },
 
@@ -443,7 +464,7 @@
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"XLabel", "kind":"namevalue", "type":"char"},
          {"name":"YLabel", "kind":"namevalue", "type":"char"},
          {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -501,7 +522,7 @@
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"XLabel", "kind":"namevalue", "type":"char"},
          {"name":"YLabel", "kind":"namevalue", "type":"char"},
          {"name":"XLabelVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -618,7 +639,7 @@
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"Interpreter", "kind":"namevalue", "type":"choices={'tex','latex','none'}"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
@@ -742,6 +763,18 @@
          {"name":"HalfViolin", "kind":"namevalue", "type":"choices={'left','right','full'}"},
          {"name":"QuartileStyle", "kind":"namevalue", "type":"choices={'shadow','boxplot','none'}"},
          {"name":"DataStyle", "kind":"namevalue", "type":"choices={'scatter','histogram','none'}"}
+      ]
+   },
+
+   "EasyPlot.title":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"text", "kind":"required"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    }
 }
