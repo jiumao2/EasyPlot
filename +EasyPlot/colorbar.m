@@ -43,7 +43,7 @@ function handle = colorbar(axes, varargin)
             elseif strcmpi(varargin{k},'Height')
                 handle.Position(4) = varargin{k+1};
             else
-                set(handle,varargin{k},varargin{k+1});
+                EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end
@@ -53,10 +53,10 @@ function handle = colorbar(axes, varargin)
         cmap(1:round((2*EasyPlot.DefaultValue.ColormapDivergingWhitePosition-1)*size(cmap,1)),:) = [];
         if cLim(2) > -cLim(1)
             percentCmap = (cLim(2)-cLim(1))./(2*cLim(2));
-            cmap = cmap(round(size(cmap,1)*(1-percentCmap)):end,:);
+            cmap = cmap(max(round(size(cmap,1)*(1-percentCmap)), 1):end,:);
         elseif cLim(2) < -cLim(1)
             percentCmap = (cLim(2)-cLim(1))./(2*-cLim(1));
-            cmap = cmap(1:round(size(cmap,1)*percentCmap),:);
+            cmap = cmap(1:min(round(size(cmap,1)*percentCmap), length(cmap)),:);
         end
     end
     

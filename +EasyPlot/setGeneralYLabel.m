@@ -45,7 +45,7 @@ function handle = setGeneralYLabel(axes_all, label, varargin)
             elseif strcmpi(varargin{k},'yShift')
                 handle.Position(2) = handle.Position(1)+varargin{k+1}; % because of rotation
             else
-                set(handle,varargin{k},varargin{k+1});
+                EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end

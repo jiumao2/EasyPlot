@@ -57,7 +57,7 @@ function handle = legend(ax, legendNames, varargin)
             elseif strcmpi(varargin{k},'Box')
 
             else
-                set(handle,varargin{k},varargin{k+1});
+                EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end

@@ -43,7 +43,7 @@ function handle = setGeneralTitle(axes_all, label, varargin)
             elseif strcmpi(varargin{k},'yShift')
                 handle.Position(2) = handle.Position(2)+varargin{k+1};
             else
-                set(handle,varargin{k},varargin{k+1});
+                EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end

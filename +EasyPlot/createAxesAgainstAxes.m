@@ -21,7 +21,7 @@ function handle = createAxesAgainstAxes(fig, ax, location, varargin)
             elseif strcmpi(varargin{k},'YAxisVisible')
                 handle.YAxis.Visible = varargin{k+1};
             else
-                set(handle,varargin{k},varargin{k+1});
+                EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end
