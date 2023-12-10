@@ -19,7 +19,7 @@ function handle = colorbar(axes, varargin)
     handle.UserData.MarginTop = EasyPlot.DefaultValue.AxesMarginTop;
     handle.UserData.MarginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
 
-    cmap = EasyPlot.DefaultValue.Colormap;
+    cmap = axes.Colormap;
     zeroCenter = 'off';
 
     if nargin>1
