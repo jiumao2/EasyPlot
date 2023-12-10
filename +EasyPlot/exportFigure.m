@@ -1,12 +1,15 @@
 function exportFigure(fig, filename, varargin)
     type = EasyPlot.DefaultValue.ExportFormattype;
     dpi = EasyPlot.DefaultValue.ExportDPI;
+    figColor = [1,1,1];
     if nargin > 2
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'type')
                 type = varargin{k+1};
             elseif strcmpi(varargin{k},'dpi')
                 dpi = varargin{k+1};
+            elseif strcmpi(varargin{k},'figColor')
+                figColor = varargin{k+1};
             else
                 error('Unknown argument!')
             end
@@ -30,11 +33,17 @@ function exportFigure(fig, filename, varargin)
         error('Unknown format type!')
     end
 
-    resolution = ['-r',num2str(dpi)];
+    resolution = ['-r', num2str(dpi)];
 
     renderer = fig.Renderer;
-    set(fig,'Renderer','painters');
-    set(fig,'PaperPosition', fig.Position);
-    print(fig,filename,formattype,resolution);
-    set(fig,'Renderer',renderer);
+    set(fig, 'Renderer', 'painters');
+    set(fig, 'InvertHardCopy', 'Off');
+    set(fig, 'PaperPosition', fig.Position);
+    
+    figColorRaw = fig.Color;
+    set(fig, 'Color', figColor);
+    print(fig, filename, formattype, resolution);
+
+    set(fig, 'Renderer', renderer);
+    set(fig, 'Color', figColorRaw);
 end
