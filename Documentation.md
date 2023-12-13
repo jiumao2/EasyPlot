@@ -51,7 +51,11 @@ ann = EasyPlot.annotation(fig, 'arrow');
 ax_all = EasyPlot.createGridAxes(fig, 2, 3); % ax_all is a 2x3 cell array
 
 % Create a new axes at the right of an existing axes
-ax_right = EasyPlot.createRightAxes(ax, 0.2); % ax_right is a new axes object with the same width, height and margin as ax
+ax_right = EasyPlot.createAxesAgainstAxes(fig, ax, 'right'); % ax_right is a new axes object with the same width, height and margin as ax
+
+% Copy an existing axes or more axes at the botom
+ax_bottom = EasyPlot.copyAxes(ax, 'bottom'); % ax_bottom is a new axes object with the same width, height and margin as ax
+ax_all_bottom = EasyPlot.copyAxes({ax1, ax2, ax3; ax4, ax5, ax6}, 'bottom'); % ax_all_bottom is a 2x3 cell array of new axes objects with the same width, height and margin as ax_all
 
 % Mark the current axes with 'A', 'B', 'C'...
 marks = EasyPlot.markAxes(ax_all, {'A', 'B', 'C'});

@@ -14,6 +14,10 @@ function set(axes_all, varargin)
                     axes_all.UserData.MarginTop = varargin{k+1};
                 case 'MarginBottom'
                     axes_all.UserData.MarginBottom = varargin{k+1};
+                case 'Width'
+                    axes_all.Position(3) = varargin{k+1};
+                case 'Height'
+                    axes_all.Position(4) = varargin{k+1};
                 otherwise
                     set(axes_all, varargin{k}, varargin{k+1});
             end
@@ -37,6 +41,10 @@ function set(axes_all, varargin)
                         axes_all{i_row,i_col}.UserData.MarginTop = varargin{k+1};
                     case 'MarginBottom'
                         axes_all{i_row,i_col}.UserData.MarginBottom = varargin{k+1};
+                    case 'Width'
+                        axes_all{i_row,i_col}.Position(3) = varargin{k+1};
+                    case 'Height'
+                        axes_all{i_row,i_col}.Position(4) = varargin{k+1};
                     otherwise
                         set(axes_all{i_row,i_col}, varargin{k}, varargin{k+1});
                 end

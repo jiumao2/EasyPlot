@@ -50,5 +50,7 @@ function handle = createAxesAgainstAxes(fig, ax, location, varargin)
     elseif strcmpi(location,'rightBottom')
         handle.Position(1) = ax.Position(1) + ax.Position(3) + ax.UserData.MarginRight + handle.UserData.MarginLeft;
         handle.Position(2) = ax.Position(2) - handle.Position(4) - ax.UserData.MarginBottom - handle.UserData.MarginTop;
+    else
+        error('Wrong location!');
     end
 end

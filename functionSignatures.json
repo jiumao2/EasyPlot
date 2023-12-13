@@ -459,6 +459,8 @@
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"Width", "kind":"namevalue", "type":"numeric"},
+         {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"XDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -776,6 +778,15 @@
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
+      ]
+   },
+
+   "EasyPlot.copyAxes":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"location", "kind":"required", "type":"choices={'top','left','bottom','right','leftTop','leftBottom','rightTop','rightBottom'}"}
       ]
    }
 }
