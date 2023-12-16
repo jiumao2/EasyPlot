@@ -47,18 +47,6 @@ function handle = colorbar(axes, varargin)
             end
         end
     end
-
-    if strcmpi(zeroCenter, 'on')
-        cLim = axes.CLim;
-        cmap(1:round((2*EasyPlot.DefaultValue.ColormapDivergingWhitePosition-1)*size(cmap,1)),:) = [];
-        if cLim(2) > -cLim(1)
-            percentCmap = (cLim(2)-cLim(1))./(2*cLim(2));
-            cmap = cmap(max(round(size(cmap,1)*(1-percentCmap)), 1):end,:);
-        elseif cLim(2) < -cLim(1)
-            percentCmap = (cLim(2)-cLim(1))./(2*-cLim(1));
-            cmap = cmap(1:min(round(size(cmap,1)*percentCmap), length(cmap)),:);
-        end
-    end
     
-    colormap(axes, cmap);
+    EasyPlot.colormap(axes, cmap, 'zeroCenter', zeroCenter);
 end

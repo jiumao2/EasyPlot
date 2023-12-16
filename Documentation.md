@@ -27,10 +27,13 @@
 
 ### Layouts
 - Every axes has 4 extra properties: `MarginLeft`, `MarginRight`, `MarginTop`, `MarginBottom`, which are similar to `HTML` web pages.
+- The figure also has 4 extra properties: `MarginLeft`, `MarginRight`, `MarginTop`, `MarginBottom`.
 - Crop the figure to set the figure size. Always do it at the end of the code.
 ```matlab
 EasyPlot.cropFigure(fig);
 ```
+- After cropping, the final figure size is determined by the axes size and the margins.  
+![](./doc/Layout.jpg)
 
 ### Create figures / axes  
 - When creating new figures / axes, please use `EasyPlot` methods instead of raw MATLAB methods.
