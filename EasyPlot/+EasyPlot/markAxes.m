@@ -8,6 +8,10 @@ function handle = markAxes(fig, axes_all, marker, varargin)
     marginRight = EasyPlot.DefaultValue.AxesMarginRight;
     marginTop = EasyPlot.DefaultValue.AxesMarginTop;
     marginBottom = EasyPlot.DefaultValue.AxesMarginBottom;
+    width = 1;
+    height = 1;
+    horizontalAlignment = 'left';
+    verticalAlignment = 'bottom';
 
     if nargin>3
         for k = 1:2:size(varargin,2)
@@ -29,6 +33,14 @@ function handle = markAxes(fig, axes_all, marker, varargin)
                 marginTop = varargin{k+1};
             elseif strcmpi(varargin{k},'marginBottom')
                 marginBottom = varargin{k+1};
+            elseif strcmpi(varargin{k},'Width')
+                width = varargin{k+1};
+            elseif strcmpi(varargin{k},'Height')
+                height = varargin{k+1};
+            elseif strcmpi(varargin{k},'HorizontalAlignment')
+                horizontalAlignment = varargin{k+1};
+            elseif strcmpi(varargin{k},'VerticalAlignment')
+                verticalAlignment = varargin{k+1};
             else
                 error('Wrong argument!');
             end
@@ -37,8 +49,8 @@ function handle = markAxes(fig, axes_all, marker, varargin)
 
     if ~iscell(axes_all)
         pos = zeros(1,4);
-        pos(3) = 0.5;
-        pos(4) = 0.5;
+        pos(3) = width;
+        pos(4) = height;
         pos(1) = axes_all.Position(1) - pos(3) + xShift;
         pos(2) = axes_all.Position(2) + axes_all.Position(4) + yShift;
         handle = EasyPlot.annotation(fig,'textbox',...
@@ -46,7 +58,9 @@ function handle = markAxes(fig, axes_all, marker, varargin)
             'String',marker,...
             'FontName',fontName,...
             'FontWeight',fontWeight,...
-            'FontSize',fontSize);
+            'FontSize',fontSize,...
+            'HorizontalAlignment', horizontalAlignment,...
+            'VerticalAlignment', verticalAlignment);
 
         handle.UserData.MarginLeft = marginLeft;
         handle.UserData.MarginRight = marginRight;
@@ -57,8 +71,8 @@ function handle = markAxes(fig, axes_all, marker, varargin)
 
     for k = 1:length(axes_all)
         pos = zeros(1,4);
-        pos(3) = 1;
-        pos(4) = 1;
+        pos(3) = width;
+        pos(4) = height;
         pos(1) = axes_all{k}.Position(1) - pos(3) + xShift;
         pos(2) = axes_all{k}.Position(2) + axes_all{k}.Position(4) + yShift;   
         handle(k) = EasyPlot.annotation(fig,'textbox',...
@@ -66,7 +80,9 @@ function handle = markAxes(fig, axes_all, marker, varargin)
             'String',marker{k},...
             'FontName',fontName,...
             'FontWeight',fontWeight,...
-            'FontSize', fontSize);
+            'FontSize', fontSize,...
+            'HorizontalAlignment', horizontalAlignment,...
+            'VerticalAlignment', verticalAlignment);
 
         handle(k).UserData.MarginLeft = marginLeft;
         handle(k).UserData.MarginRight = marginRight;

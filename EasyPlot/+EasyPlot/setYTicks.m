@@ -1,4 +1,5 @@
 function setYTicks(axes_all, ticks)
+    ticks = sort(ticks);
     if ~iscell(axes_all)
         yticks(axes_all, ticks);
         return

@@ -1,4 +1,6 @@
 function axes_all_copied = copyAxes(axes_all, location, varargin)
+%COPYAXES Copy the position and margins of existing axes. But not all the
+%properties are copied.
     if ~iscell(axes_all)
         fig = axes_all.Parent;
         axes_all_copied = EasyPlot.createAxesAgainstAxes(fig, axes_all, location, varargin{:});
