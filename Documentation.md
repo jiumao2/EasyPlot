@@ -28,12 +28,37 @@
 ### Layouts
 - Every axes has 4 extra properties: `MarginLeft`, `MarginRight`, `MarginTop`, `MarginBottom`, which are similar to `HTML` web pages.
 - The figure also has 4 extra properties: `MarginLeft`, `MarginRight`, `MarginTop`, `MarginBottom`.
+- You can set the margins of the axes and the figure when creating them or using `EasyPlot.set` method.  
+```matlab  
+fig = EasyPlot.figure('marginLeft', 0.5, 'marginRight', 0.5, 'marginTop', 0.5, 'marginBottom', 0.5);
+ax = EasyPlot.axes(fig, 'marginLeft', 1, 'marginRight', 0.5, 'marginTop', 0.5, 'marginBottom', 1);
+
+EasyPlot.set(ax, 'marginLeft', 1, 'marginRight', 0.5, 'marginTop', 0.5, 'marginBottom', 1);
+```
+
 - Crop the figure to set the figure size. Always do it at the end of the code.
 ```matlab
 EasyPlot.cropFigure(fig);
 ```
 - After cropping, the final figure size is determined by the axes size and the margins.  
 ![](./doc/Layout.jpg)
+
+- To align the axes, use `EasyPlot.align` method.  
+- The position can be `'left'`, `'right'`, `'top'`, `'bottom'`, `'horizontalCenter'` or `'verticalCenter'`.
+```matlab
+% Align the left edges of the axes
+EasyPlot.align(ax, ax_reference, 'left');
+
+% Align the axes to the vertical center of the reference axes
+EasyPlot.align(ax, ax_reference, 'verticalCenter'); % the vertical center of the axes is aligned to the vertical center of the reference axes
+```
+
+- To place the axes next to another axes, use `EasyPlot.place` method.  
+- The position can be `'left'`, `'right'`, `'top'` or `'bottom'`.
+```matlab
+% Place the axes to the right of the reference axes
+EasyPlot.place(ax, ax_reference, 'right'); % the left edge of the axes is aligned to the right edge of the reference axes (considering the margins)
+```
 
 ### Create figures / axes  
 - When creating new figures / axes, please use `EasyPlot` methods instead of raw MATLAB methods.
