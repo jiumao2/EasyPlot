@@ -366,13 +366,16 @@
          {"name":"label", "kind":"namevalue", "type":"char"},
          {"name":"colormap", "kind":"namevalue", "type":"numeric"},
          {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"zeroPosition", "kind":"namevalue", "type":"numeric"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"Width", "kind":"namevalue", "type":"numeric"},
          {"name":"Position", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
-         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"Ticks", "kind":"namevalue", "type":"numeric"},
+         {"name":"TickLabels", "kind":"namevalue"}
       ]
    },
 
@@ -599,7 +602,8 @@
       [
          {"name":"axes_all", "kind":"required"},
          {"name":"cmap", "kind":"required", "type":"numeric"},
-         {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"}
+         {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"zeroPosition", "kind":"namevalue", "type":"numeric"}
       ]
    },
 

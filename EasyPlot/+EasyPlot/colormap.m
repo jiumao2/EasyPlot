@@ -1,9 +1,12 @@
 function colormap(axes_all, cmap, varargin)
     zeroCenter = 'off';
+    zeroPosition = 0;
     if nargin > 2
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'zeroCenter')
                 zeroCenter = varargin{k+1};
+            elseif strcmpi(varargin{k},'zeroPosition')
+                zeroPosition = varargin{k+1};
             else
                 error('Unknown argument!');
             end
@@ -11,7 +14,7 @@ function colormap(axes_all, cmap, varargin)
     end
     if ~iscell(axes_all)
         if strcmpi(zeroCenter, 'on')
-            cLim = axes_all.CLim;
+            cLim = axes_all.CLim - zeroPosition;
             cmap(1:round((2*EasyPlot.DefaultValue.ColormapDivergingWhitePosition-1)*size(cmap,1)),:) = [];
             if cLim(2) > -cLim(1)
                 percentCmap = (cLim(2)-cLim(1))./(2*cLim(2));
@@ -28,7 +31,7 @@ function colormap(axes_all, cmap, varargin)
             for j = 1:size(axes_all,2)
                 if strcmpi(zeroCenter, 'on')
                     cmap = cmap_raw;
-                    cLim = axes_all{k,j}.CLim;
+                    cLim = axes_all{k,j}.CLim - zeroPosition;
                     cmap(1:round((2*EasyPlot.DefaultValue.ColormapDivergingWhitePosition-1)*size(cmap,1)),:) = [];
                     if cLim(2) > -cLim(1)
                         percentCmap = (cLim(2)-cLim(1))./(2*cLim(2));

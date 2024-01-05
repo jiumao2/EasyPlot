@@ -21,6 +21,7 @@ function handle = colorbar(axes, varargin)
 
     cmap = axes.Colormap;
     zeroCenter = 'off';
+    zeroPosition = 0;
 
     if nargin>1
         for k = 1:2:size(varargin,2)
@@ -30,6 +31,8 @@ function handle = colorbar(axes, varargin)
                 cmap = varargin{k+1};
             elseif strcmpi(varargin{k}, 'zeroCenter')
                 zeroCenter = varargin{k+1};
+            elseif strcmpi(varargin{k}, 'zeroPosition')
+                zeroPosition = varargin{k+1};
             elseif strcmpi(varargin{k},'MarginLeft')
                 handle.UserData.MarginLeft = varargin{k+1};
             elseif strcmpi(varargin{k},'MarginRight')
@@ -42,11 +45,30 @@ function handle = colorbar(axes, varargin)
                 handle.Position(3) = varargin{k+1};
             elseif strcmpi(varargin{k},'Height')
                 handle.Position(4) = varargin{k+1};
+            elseif strcmpi(varargin{k},'Ticks')
+                ticks = sort(varargin{k+1});
+                EasyPlot.set(handle, 'Ticks', ticks);
+            elseif strcmpi(varargin{k},'TickLabels')
+                labels = varargin{k+1};
+                if isnumeric(labels)
+                    labels_out = cell(1, length(labels));
+                    for i_label = 1:length(labels_out)
+                        labels_out{i_label} = num2str(labels(i_label));
+                    end
+                elseif iscell(labels) && isnumeric(labels{1})
+                    labels_out = cell(1, length(labels));
+                    for i_label = 1:length(labels_out)
+                        labels_out{i_label} = num2str(labels{i_label});
+                    end
+                else
+                    labels_out = labels;
+                end
+                EasyPlot.set(handle, 'TickLabels', labels_out);
             else
                 EasyPlot.set(handle,varargin{k},varargin{k+1});
             end
         end
     end
     
-    EasyPlot.colormap(axes, cmap, 'zeroCenter', zeroCenter);
+    EasyPlot.colormap(axes, cmap, 'zeroCenter', zeroCenter, 'zeroPosition', zeroPosition);
 end

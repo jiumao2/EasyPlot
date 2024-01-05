@@ -225,9 +225,9 @@ EasyPlot.ColorMap.showCheetSheet();
 ```  
 - Sometimes you need to set 0 as the center of the colormap.  
 ```matlab
-EasyPlot.colormap(ax, cmap, 'zeroCenter', 'on');
+EasyPlot.colormap(ax, cmap, 'zeroCenter', 'on', 'zeroPosition', 0);
 % Also you can do it when creating a colorbar
-EasyPlot.colorbar(ax, 'colormap', cmap, 'zeroCenter', 'on');
+EasyPlot.colorbar(ax, 'colormap', cmap, 'zeroCenter', 'on', 'zeroPosition', 0);
 ```
 
 ### Default settings  
