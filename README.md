@@ -1,6 +1,6 @@
 # EasyPlot
 [![View EasyPlot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)  
-Easier to make scientific figures with MATLAB
+Save your time when making scientific figures with MATLAB
 ## Highlights  
 - Similiar to the MATLAB grammar and support for all raw MATLAB functions
 - Support for auto-completion and you do not need to remember the names of the functions and arguments
@@ -44,12 +44,13 @@ EasyPlot.setYLim({ax1, ax2}, [0.5,10.5]);
 EasyPlot.setCLim({ax1, ax2}, 'largest');
 
 % set the colormap and colorbar
+% use the same colormap for both axes and set the white color for zero
 EasyPlot.colormap({ax1, ax2}, EasyPlot.ColorMap.Diverging.seismic, 'zeroCenter', 'on');
 EasyPlot.colorbar(ax2,...
     'label', 'Color bar',...
     'MarginRight', 1);
 
-% Mark the axes
+% mark the axes
 EasyPlot.markAxes(fig, {ax1, ax2}, {'A','B'},...
     'xShift', 0.5,...
     'MarginTop', 0);
