@@ -26,6 +26,21 @@ function colormap(axes_all, cmap, varargin)
         end
         colormap(axes_all, cmap);
     else
+        % Check whether the CLim are same for all axes
+        flag_different = false;
+        for k = 1:size(axes_all,1)
+            for j = 1:size(axes_all,2)
+                if ~all(axes_all{k,j}.CLim == axes_all{1,1}.CLim)
+                    warning('The CLim from the input axes are different. It may result to different cmaps for the axes.');
+                    flag_different = true;
+                    break
+                end
+            end
+            if flag_different
+                break
+            end
+        end
+        
         cmap_raw = cmap;
         for k = 1:size(axes_all,1)
             for j = 1:size(axes_all,2)
