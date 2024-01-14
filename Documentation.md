@@ -15,6 +15,7 @@
     - [Using `set`](#using-set)
     - [Truncate axes](#truncate-axes)
   - [Plotting methods](#plotting-methods)
+    - [scalebar](#scalebar)
     - [plotShaded](#plotshaded)
     - [boundedLine](#boundedline)
     - [violinplot](#violinplot)
@@ -165,7 +166,39 @@ EasyPlot.set({ax1, ax2, ax3}, 'MarginLeft', 0.8, 'MarginBottom', 0.8);
 ### Plotting methods
 - All plotting methods are the same as MATLAB, such as `plot`, `scatter`, `histogram`......
 - Do not add `EasyPlot` before the MATLAB plotting methods.
-- Some useful methods are provided by EasyPlot.
+- Some useful methods are provided by EasyPlot.  
+
+#### scalebar  
+- Draw X or/and Y scalebars for an axes and allow a wide range of customizations
+```matlab  
+% generate data
+x = 1:100;
+y = sin(0.1*x);
+
+% generate an axes
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig, ...
+    'XAxisVisible', 'off',...
+    'YAxisVisible', 'off',...
+    'Width', 6,...
+    'Height', 6);
+
+% plot the data and set YLim
+plot(ax, x, y, '-', 'LineWidth', 2);
+ax.YLim = [-1, 1];
+
+% add scalebars at the southwest
+h_scalebars = EasyPlot.scalebar(ax, 'XY',...
+    'xBarLabel', '1 sec', 'xBarRatio', 10, 'xBarLength', 1,...
+    'yBarLabel', '1 mm', 'yBarRatio', 0.3, 'yBarLength', 1,...
+    'location', 'southwest',...
+    'color', [0.3, 0.3, 0.3],...
+    'fontSize', 10);
+
+EasyPlot.cropFigure(fig);
+EasyPlot.exportFigure(fig, 'scalebar');
+```  
+![](./doc/scalebar.png)  
 
 #### plotShaded
 - Plot a shaded area between two curves.

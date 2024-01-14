@@ -816,5 +816,33 @@
          {"name":"axes_reference", "kind":"required"},
          {"name":"position", "kind":"required", "type":"choices={'left','right','top','bottom','horizontalCenter','verticalCenter'}"}
       ]
+   },
+
+   "EasyPlot.scalebar":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"type", "kind":"optional", "type":"choices={'X','Y','XY'}"},
+         {"name":"location", "kind":"namevalue", "type":"choices={'northeast','northwest','southeast','southwest'}"},
+         {"name":"color", "kind":"namevalue"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
+         {"name":"xBarLabel", "kind":"namevalue", "type":"char"},
+         {"name":"yBarLabel", "kind":"namevalue", "type":"char"},
+         {"name":"xBarLength", "kind":"namevalue", "type":"numeric"},
+         {"name":"yBarLength", "kind":"namevalue", "type":"numeric"},
+         {"name":"xBarRatio", "kind":"namevalue", "type":"numeric"},
+         {"name":"yBarRatio", "kind":"namevalue", "type":"numeric"},
+         {"name":"xBarDirection", "kind":"namevalue", "type":"choices={'left','right'}"},
+         {"name":"yBarDirection", "kind":"namevalue", "type":"choices={'top','bottom'}"},
+         {"name":"xTextPosition", "kind":"namevalue", "type":"choices={'top','bottom'}"},
+         {"name":"yTextPosition", "kind":"namevalue", "type":"choices={'left','right'}"},
+         {"name":"xTextDistance", "kind":"namevalue", "type":"numeric"},
+         {"name":"yTextDistance", "kind":"namevalue", "type":"numeric"},
+         {"name":"showXText", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"showYText", "kind":"namevalue", "type":"choices={'on','off'}"}
+      ]
    }
 }
