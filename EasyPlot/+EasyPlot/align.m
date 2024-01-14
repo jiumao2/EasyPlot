@@ -70,6 +70,7 @@ function align(axes_all, reference, position)
         out = reference.Position(1)+reference.Position(3);
         if ~iscell(axes_all)
             axes_all.Position(1) = out-axes_all.Position(3);
+            return
         end
     
         ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);
@@ -79,6 +80,7 @@ function align(axes_all, reference, position)
         out = reference.Position(2)+reference.Position(4);
         if ~iscell(axes_all)
             axes_all.Position(2) = out-axes_all.Position(4);
+            return
         end
     
         ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);

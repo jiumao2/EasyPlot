@@ -25,7 +25,6 @@ classdef DefaultValue
 
         % Font
         FontName = 'Arial';
-        FontSizeTitle = 12;
         FontSize = 8;
         FontWeight = 'normal';
 
