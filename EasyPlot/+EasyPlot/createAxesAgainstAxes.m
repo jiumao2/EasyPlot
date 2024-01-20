@@ -34,16 +34,16 @@ function handle = createAxesAgainstAxes(fig, ax, location, varargin)
         handle.Position(2) = ax.Position(2);
     elseif strcmpi(location,'top')
         handle.Position(1) = ax.Position(1);
-        handle.Position(2) = ax.Position(2) + ax.UserData.MarginTop + handle.UserData.MarginBottom + handle.Position(4);
+        handle.Position(2) = ax.Position(2) + ax.Position(4) + ax.UserData.MarginTop + handle.UserData.MarginBottom;
     elseif strcmpi(location,'bottom')
         handle.Position(1) = ax.Position(1);
         handle.Position(2) = ax.Position(2) - handle.Position(4) - ax.UserData.MarginBottom - handle.UserData.MarginTop;
     elseif strcmpi(location,'leftTop')
         handle.Position(1) = ax.Position(1) - ax.UserData.MarginLeft - handle.UserData.MarginRight - handle.Position(3);
-        handle.Position(2) = ax.Position(2) + ax.UserData.MarginTop + handle.UserData.MarginBottom + handle.Position(4);
+        handle.Position(2) = ax.Position(2) + ax.Position(4) + ax.UserData.MarginTop + handle.UserData.MarginBottom;
     elseif strcmpi(location,'rightTop')
         handle.Position(1) = ax.Position(1) + ax.Position(3) + ax.UserData.MarginRight + handle.UserData.MarginLeft;
-        handle.Position(2) = ax.Position(2) + ax.UserData.MarginTop + handle.UserData.MarginBottom + handle.Position(4);
+        handle.Position(2) = ax.Position(2) + ax.Position(4) + ax.UserData.MarginTop + handle.UserData.MarginBottom;
     elseif strcmpi(location, 'leftBottom')
         handle.Position(1) = ax.Position(1) - ax.UserData.MarginLeft - handle.UserData.MarginRight - handle.Position(3);
         handle.Position(2) = ax.Position(2) - handle.Position(4) - ax.UserData.MarginBottom - handle.UserData.MarginTop;
