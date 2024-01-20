@@ -1,5 +1,6 @@
 # EasyPlot
-[![View EasyPlot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)  
+[![View EasyPlot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)   
 Save your time when making scientific figures with MATLAB
 ## Highlights  
 - Similiar to the MATLAB grammar and support for all raw MATLAB functions
@@ -12,6 +13,7 @@ Save your time when making scientific figures with MATLAB
 - Use the codes simply by enter `EasyPlot.` and choose the function you want (using auto-completion)
 
 ## A simple example
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)   
 - A figure with 2 heatmaps  
 ```matlab
 % create two 10x10 matrices
