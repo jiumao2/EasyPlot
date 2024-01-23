@@ -39,7 +39,16 @@ function exportFigure(fig, filename, varargin)
     set(fig, 'Renderer', 'painters');
     set(fig, 'InvertHardCopy', 'Off');
     set(fig, 'PaperPosition', fig.Position);
-    
+
+    % check if the paper can contain the figure
+    screenSize = get(0, 'ScreenSize');
+    screenPixelsPerInch = get(0, 'ScreenPixelsPerInch');
+    screenWidth = screenSize(3)./screenPixelsPerInch*2.54;
+    screenHeight = screenSize(4)./screenPixelsPerInch*2.54;
+    if fig.OuterPosition(3) > screenWidth || fig.OuterPosition(4) > screenHeight
+        warning('The figure is larger than the screen. The figure will be cropped!');
+    end
+
     figColorRaw = fig.Color;
     set(fig, 'Color', figColor);
     print(fig, filename, formattype, resolution);
