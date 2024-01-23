@@ -16,6 +16,7 @@
     - [Truncate axes](#truncate-axes)
   - [Plotting methods](#plotting-methods)
     - [scalebar](#scalebar)
+    - [significanceLine](#significanceline)
     - [plotShaded](#plotshaded)
     - [boundedLine](#boundedline)
     - [violinplot](#violinplot)
@@ -199,6 +200,39 @@ EasyPlot.cropFigure(fig);
 EasyPlot.exportFigure(fig, 'scalebar');
 ```  
 ![](./doc/scalebar.png)  
+
+#### significanceLine
+- creates a line that marks the statistical significance 
+```matlab
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig);
+
+% set the data
+x = [1, 2, 3, 4];
+y = [0.6, 0.4, 0.6, 0.8];
+
+% bar plot
+bar(ax, x, y);
+
+% significance line between 1 and 2
+significanceLine(ax, 1, 2, 0.8,...
+    'edgeLength', 0.05,...
+    'fontSize', 18);
+
+% significance line between 1 and 4
+significanceLine(ax, 1, 4, 1,...
+    'marker', '**',...
+    'edgeLength', 0.05,...
+    'fontSize', 18);
+
+% set the limitations of the axis
+xlim(ax, [0.5, 4.5]);
+ylim(ax, [0, 1.1]);
+
+EasyPlot.cropFigure(fig);
+EasyPlot.exportFigure(fig, 'significanceLine');
+```
+![](./doc/significanceLine.png)
 
 #### plotShaded
 - Plot a shaded area between two curves.

@@ -844,5 +844,23 @@
          {"name":"showXText", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"showYText", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
+   },
+
+   "significanceLine":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"xStart", "kind":"required", "type":"numeric"},
+         {"name":"xEnd", "kind":"required", "type":"numeric"},
+         {"name":"height", "kind":"required", "type":"numeric"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
+         {"name":"color", "kind":"namevalue"},
+         {"name":"marker", "kind":"namevalue", "type":"char"},
+         {"name":"edgeLength", "kind":"namevalue", "type":"numeric"},
+         {"name":"markerSpace", "kind":"namevalue", "type":"numeric"}
+      ]
    }
 }
