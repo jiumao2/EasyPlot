@@ -362,7 +362,7 @@
       "inputs":
       [
          {"name":"axes", "kind":"required"},
-         {"name":"location", "kind":"namevalue", "type":"choices={'leftTop','leftBottom','rightTop','rightBottom'}"},
+          {"name":"location", "kind":"namevalue", "type":"choices={'north','south','east','west','northoutside','southoutside','eastoutside','westoutside','manual','layout'}"},
          {"name":"label", "kind":"namevalue", "type":"char"},
          {"name":"colormap", "kind":"namevalue", "type":"numeric"},
          {"name":"zeroCenter", "kind":"namevalue", "type":"choices={'on','off'}"},
@@ -774,6 +774,39 @@
          {"name":"HalfViolin", "kind":"namevalue", "type":"choices={'left','right','full'}"},
          {"name":"QuartileStyle", "kind":"namevalue", "type":"choices={'shadow','boxplot','none'}"},
          {"name":"DataStyle", "kind":"namevalue", "type":"choices={'scatter','histogram','none'}"}
+      ]
+   },
+
+   "EasyPlot.boxplot":
+   {
+      "inputs":
+      [
+         {"name":"axes", "kind":"required"},
+         {"name":"data", "kind":"required", "type":"numeric"},
+         {"name":"GroupOrder", "kind":"optional", "type":"numeric"},
+         {"name":"BoxStyle", "kind":"namevalue", "type":"choices={'outline','filled'}"},
+         {"name":"Colors", "kind":"namevalue"},
+         {"name":"MedianStyle", "kind":"namevalue", "type":"choices={'line','target'}"},
+         {"name":"Notch", "kind":"namevalue", "type":"choices={'on','off','marker'}"},
+         {"name":"OutlierSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"PlotStyle", "kind":"namevalue", "type":"choices={'traditional','compact'}"},
+         {"name":"Symbol", "kind":"namevalue", "type":"char"},
+         {"name":"Widths", "kind":"namevalue", "type":"numeric"},
+         {"name":"ColorGroup", "kind":"namevalue"},
+         {"name":"FactorDirection", "kind":"namevalue", "type":"choices={'data','list','auto'}"},
+         {"name":"FullFactors", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"FactorGap", "kind":"namevalue"},
+         {"name":"FactorSeparator", "kind":"namevalue"},
+         {"name":"GroupOrder", "kind":"namevalue"},
+         {"name":"DataLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"ExtremeMode", "kind":"namevalue", "type":"choices={'clip','compress'}"},
+         {"name":"Jitter", "kind":"namevalue", "type":"numeric"},
+         {"name":"Whisker", "kind":"namevalue", "type":"numeric"},
+         {"name":"Labels", "kind":"namevalue"},
+         {"name":"LabelOrientation", "kind":"namevalue", "type":"choices={'inline','horizontal'}"},
+         {"name":"LabelVerbosity", "kind":"namevalue", "type":"choices={'all','minor','majorminor'}"},
+         {"name":"Orientation", "kind":"namevalue", "type":"choices={'vertical','horizontal'}"},
+         {"name":"Positions", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
