@@ -19,7 +19,7 @@ function handle_all = significanceLine(ax, xStart, xEnd, height, varargin)
 %     marker: the text shown on the line (default, '*')
 % 
 %     edgeLength: the length of the line on the edges.
-%             The edge will not shown if edgeLength is 0 (default, 1)
+%             The edge will not shown if edgeLength is 0 (default, 0.1*line_length)
 % 
 %     markerSpace: the space between the marker and the line (default, 0)
 % 
@@ -43,7 +43,7 @@ function handle_all = significanceLine(ax, xStart, xEnd, height, varargin)
 %
 
 marker = '*';
-edgeLength = 1;
+edgeLength = 0.1*(xEnd - xStart);
 markerSpace = 0;
 lineWidth = 1;
 fontWeight = 'normal';
