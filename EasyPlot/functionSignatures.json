@@ -895,5 +895,23 @@
          {"name":"edgeLength", "kind":"namevalue", "type":"numeric"},
          {"name":"markerSpace", "kind":"namevalue", "type":"numeric"}
       ]
+   },
+
+   "xtickangle":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"angle", "kind":"required", "type":"numeric"}
+      ]
+   },
+
+   "ytickangle":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"angle", "kind":"required", "type":"numeric"}
+      ]
    }
 }

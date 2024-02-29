@@ -135,6 +135,9 @@ EasyPlot.yticklabels({ax1, ax2, ax3}, [3, 4, 5]); % Both numeric array and cell 
 
 % set the y ticks and tick labels together
 EasyPlot.setYTicksAndLabels({ax1, ax2, ax3}, [0, 1, 2], [3, 4, 5]);
+
+% set x tick angles
+EasyPlot.xtickangle({ax1, ax2, ax3}, 0);
 ```
 
 #### title methods
