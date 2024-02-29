@@ -1,14 +1,22 @@
 function xticklabels(all_axes, labels)
-    % Check if labels are numeric
+    % Check if labels are numeric, omit NaN
     if isnumeric(labels)
         labels_out = cell(1, length(labels));
         for k = 1:length(labels_out)
-            labels_out{k} = num2str(labels(k));
+            if isnan(labels(k))
+                labels_out{k} = '';
+            else
+                labels_out{k} = num2str(labels(k));
+            end
         end
     elseif iscell(labels) && isnumeric(labels{1})
         labels_out = cell(1, length(labels));
         for k = 1:length(labels_out)
-            labels_out{k} = num2str(labels{k});
+            if isnan(labels{k})
+                labels_out{k} = '';
+            else
+                labels_out{k} = num2str(labels{k});
+            end
         end
     else
         labels_out = labels;
