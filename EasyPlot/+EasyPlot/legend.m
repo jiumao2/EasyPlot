@@ -22,6 +22,7 @@ function handle = legend(ax, legendNames, varargin)
         end
     end    
     
+    ax_position_raw = ax.Position;
     width_raw = ax.Position(3);
     height_raw = ax.Position(4);
     if isempty(selectedPlots)   
@@ -70,8 +71,7 @@ function handle = legend(ax, legendNames, varargin)
     handle.Position = position_raw;
     dx = width_raw - ax.Position(3);
     dy = height_raw - ax.Position(4);
-    ax.Position(3) = width_raw;
-    ax.Position(4) = height_raw;
+    ax.Position = ax_position_raw;
     EasyPlot.move(handle, 'dx', dx, 'dy', dy);
 
     handle.UserData.MarginLeft = marginLeft;

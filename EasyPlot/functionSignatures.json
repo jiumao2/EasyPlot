@@ -856,7 +856,7 @@
       "inputs":
       [
          {"name":"axes", "kind":"required"},
-         {"name":"type", "kind":"optional", "type":"choices={'X','Y','XY'}"},
+         {"name":"type", "kind":"required", "type":"choices={'X','Y','XY'}"},
          {"name":"location", "kind":"namevalue", "type":"choices={'northeast','northwest','southeast','southwest'}"},
          {"name":"color", "kind":"namevalue"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},

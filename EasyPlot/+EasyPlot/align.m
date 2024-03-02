@@ -63,8 +63,8 @@ function align(axes_all, reference, position)
             return
         end
     
-        ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);
-        dx = out-ax_side.Position(1);
+        idx_side = EasyPlot.Utils.getSideAxes(axes_all, position);
+        dx = out-axes_all{idx_side}.Position(1);
         dy = 0;
     elseif strcmpi(position, 'right')
         out = reference.Position(1)+reference.Position(3);
@@ -73,8 +73,8 @@ function align(axes_all, reference, position)
             return
         end
     
-        ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);
-        dx = out-ax_side.Position(1)-axes_all.Position(3);
+        idx_side = EasyPlot.Utils.getSideAxes(axes_all, position);
+        dx = out-axes_all{idx_side}.Position(1)-axes_all.Position(3);
         dy = 0;
     elseif strcmpi(position, 'top')
         out = reference.Position(2)+reference.Position(4);
@@ -83,9 +83,9 @@ function align(axes_all, reference, position)
             return
         end
     
-        ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);
+        idx_side = EasyPlot.Utils.getSideAxes(axes_all, position);
         dx = 0;
-        dy = out-ax_side.Position(2)-axes_all.Position(4);
+        dy = out-axes_all{idx_side}.Position(2)-axes_all.Position(4);
     elseif strcmpi(position, 'bottom')
         out = reference.Position(2);
         if ~iscell(axes_all)
@@ -93,9 +93,9 @@ function align(axes_all, reference, position)
             return
         end
     
-        ax_side = EasyPlot.Utils.getSideAxes(axes_all, position);
+        idx_side = EasyPlot.Utils.getSideAxes(axes_all, position);
         dx = 0;
-        dy = out-ax_side.Position(2);
+        dy = out-axes_all{idx_side}.Position(2);
     elseif strcmpi(position, 'horizontalCenter')
         out = 0.5*(left_ref+right_ref);
         dx = out-0.5*(left+right);
