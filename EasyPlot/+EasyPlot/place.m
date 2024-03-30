@@ -3,6 +3,10 @@ function place(axes_all, reference, location)
         idx = EasyPlot.Utils.getSideAxes(reference, location);
         reference = reference{idx};
     end
+    
+    if ~iscell(axes_all)
+        axes_all = {axes_all};
+    end
 
     top = -Inf;
     bottom = Inf;
