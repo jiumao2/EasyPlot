@@ -7,9 +7,9 @@
   - [Layouts](#layouts)
   - [Create figures / axes](#create-figures--axes)
   - [Axes methods](#axes-methods)
-    - [[xyc]Lim methods](#xyclim-methods)
-    - [[xy]label methods](#xylabel-methods)
-    - [[xy]ticks methods](#xyticks-methods)
+    - [[xyzc]Lim methods](#xyzclim-methods)
+    - [[xyz]label methods](#xyzlabel-methods)
+    - [[xyz]ticks methods](#xyzticks-methods)
     - [title methods](#title-methods)
     - [Move axes](#move-axes)
     - [Using `set`](#using-set)
@@ -94,7 +94,7 @@ marks = EasyPlot.markAxes(ax_all, {'A', 'B', 'C'});
 ### Axes methods
 - All MATLAB axes methods are supported, while some extra methods are created for convenience.  
 
-#### [xyc]Lim methods  
+#### [xyzc]Lim methods  
 ```matlab
 % Sometimes you need to set the same limits for multiple axes
 EasyPlot.setYLim({ax1, ax2}, [0, 1]);
@@ -102,7 +102,7 @@ EasyPlot.setYLim({ax1, ax2}, [0, 1]);
 EasyPlot.setYLim({ax1, ax2}, 'Largest');
 ```
 
-#### [xy]label methods  
+#### [xyz]label methods  
 ```matlab
 % Sometimes you need to set the same labels for multiple axes
 % For a column of axes, you may want to set the y label for all the axes
@@ -123,7 +123,7 @@ EasyPlot.setGeneralXLabel({ax1, ax2, ax3}, 'X label');
 EasyPlot.setGeneralTitle({ax1, ax2, ax3}, 'Title');
 ```
 
-#### [xy]ticks methods
+#### [xyz]ticks methods
 ```matlab
 % set the y ticks for multiple axes
 EasyPlot.setYTicks({ax1, ax2, ax3}, [0, 1, 2]);

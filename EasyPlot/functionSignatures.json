@@ -14,6 +14,7 @@
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
       ]
    },
+
    "EasyPlot.axes":
    {
       "inputs":
@@ -170,15 +171,13 @@
          {"name":"position", "kind":"required", "type":"choices={'left','right','top','bottom'}"}
       ]
    },
+
    "EasyPlot.setXLabelRow":
    {
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"},
-         {"name":"fontName", "kind":"namevalue", "type":"char"},
-         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
+         {"name":"label", "kind":"required", "type":"char"}
       ]
    },
    "EasyPlot.setYLabelRow":
@@ -186,34 +185,55 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"},
-         {"name":"fontName", "kind":"namevalue", "type":"char"},
-         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
+         {"name":"label", "kind":"required", "type":"char"}
       ]
    },
+
    "EasyPlot.setXLabelColumn":
    {
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"},
-         {"name":"fontName", "kind":"namevalue", "type":"char"},
-         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
+         {"name":"label", "kind":"required", "type":"char"}
       ]
    },
+
    "EasyPlot.setYLabelColumn":
    {
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"},
-         {"name":"fontName", "kind":"namevalue", "type":"char"},
-         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
-         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"} 
+         {"name":"label", "kind":"required", "type":"char"}
       ]
    },   
+
+   "EasyPlot.xlabel":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+
+   "EasyPlot.ylabel":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+
+   "EasyPlot.zlabel":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"label", "kind":"required", "type":"char"}
+      ]
+   },
+
    "EasyPlot.setXLim":
    {
       "inputs":
@@ -221,15 +241,26 @@
          {"name":"all_axes", "kind":"required"},
          {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest','smallestOne'}"}
       ]
-   },     
+   },  
+
    "EasyPlot.setYLim":
    {
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest'}"}
+         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest','smallestOne'}"}
       ]
    },
+
+   "EasyPlot.setZLim":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"mode", "kind":"required", "type":"choices={'largestOne','largest','smallestOne'}"}
+      ]
+   },
+
    "EasyPlot.exportFigure":
    {
       "inputs":
@@ -682,6 +713,15 @@
       ]
    },
 
+   "EasyPlot.zticks":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"}
+      ]
+   },
+
    "EasyPlot.xticklabels":
    {
       "inputs":
@@ -692,6 +732,15 @@
    },
 
    "EasyPlot.yticklabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.zticklabels":
    {
       "inputs":
       [
@@ -711,6 +760,16 @@
    },
 
    "EasyPlot.setYTicksAndLabels":
+   {
+      "inputs":
+      [
+         {"name":"all_axes", "kind":"required"},
+         {"name":"ticks", "kind":"required", "type":"numeric"},
+         {"name":"labels", "kind":"required"}
+      ]
+   },
+
+   "EasyPlot.setZTicksAndLabels":
    {
       "inputs":
       [
@@ -907,6 +966,15 @@
    },
 
    "ytickangle":
+   {
+      "inputs":
+      [
+         {"name":"axes_all", "kind":"required"},
+         {"name":"angle", "kind":"required", "type":"numeric"}
+      ]
+   },
+
+   "ztickangle":
    {
       "inputs":
       [
