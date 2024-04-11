@@ -269,7 +269,8 @@
          {"name":"filename", "kind":"required", "type":"char"},
          {"name":"type", "kind":"namevalue", "type":"choices={'png','jpg','tiff','tiffRaw','eps','bmp','pdf'}"},
          {"name":"dpi", "kind":"namevalue", "type":"numeric"},
-         {"name":"figColor", "kind":"namevalue", "type":"numeric"}
+         {"name":"figColor", "kind":"namevalue", "type":"numeric"},
+         {"name":"renderer", "kind":"namevalue", "type":"choices={'painters','opengl'}"}
       ]
    },
 
