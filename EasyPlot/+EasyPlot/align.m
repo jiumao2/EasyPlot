@@ -42,10 +42,10 @@ function align(axes_all, reference, position)
                     left_this = axes_all{k,j}.Position(1);
                     right_this = axes_all{k,j}.Position(1)+axes_all{k,j}.Position(3);
                     
-                    top_ref = max(top_ref,top_this);
-                    bottom_ref = min(bottom_ref,bottom_this);
-                    left_ref = min(left_ref,left_this);
-                    right_ref = max(right_ref,right_this);
+                    top = max(top,top_this);
+                    bottom = min(bottom,bottom_this);
+                    left = min(left,left_this);
+                    right = max(right,right_this);
                 end
             end
         else

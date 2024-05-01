@@ -1,7 +1,27 @@
 function place(axes_all, reference, location)
     if iscell(reference)
-        idx = EasyPlot.Utils.getSideAxes(reference, location);
-        reference = reference{idx};
+        top_ref = -Inf;
+        bottom_ref = Inf;
+        left_ref = Inf;
+        right_ref = -Inf;
+        for k = 1:size(reference, 1)
+            for j = 1:size(reference, 2)
+                top_this = reference{k,j}.Position(2)+reference{k,j}.Position(4);
+                bottom_this = reference{k,j}.Position(2);
+                left_this = reference{k,j}.Position(1);
+                right_this = reference{k,j}.Position(1)+reference{k,j}.Position(3);
+                
+                top_ref = max(top_ref,top_this);
+                bottom_ref = min(bottom_ref,bottom_this);
+                left_ref = min(left_ref,left_this);
+                right_ref = max(right_ref,right_this);
+            end
+        end         
+    else
+        top_ref = reference.Position(2)+reference.Position(4);
+        bottom_ref = reference.Position(2);
+        left_ref = reference.Position(1);
+        right_ref = reference.Position(1)+reference.Position(3);
     end
     
     if ~iscell(axes_all)
@@ -27,25 +47,17 @@ function place(axes_all, reference, location)
     end
 
     if strcmpi(location, 'left')
-        out = reference.Position(1)-reference.UserData.MarginLeft;
-
-        dx = out-right;
+        dx = left_ref-right;
         dy = 0;
     elseif strcmpi(location, 'right')
-        out = reference.Position(1)+reference.Position(3)+reference.UserData.MarginRight;
-
-        dx = out-left;
+        dx = right_ref-left;
         dy = 0;
     elseif strcmpi(location, 'top')
-        out = reference.Position(2)+reference.Position(4)+reference.UserData.MarginTop;
-
         dx = 0;
-        dy = out-bottom;
+        dy = top_ref-bottom;
     elseif strcmpi(location, 'bottom')
-        out = reference.Position(2)-reference.UserData.MarginBottom;
-
         dx = 0;
-        dy = out-top;
+        dy = bottom_ref-top;
     end
     
     EasyPlot.move(axes_all, 'dx', dx, 'dy', dy);

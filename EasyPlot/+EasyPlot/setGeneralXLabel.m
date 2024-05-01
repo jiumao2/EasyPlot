@@ -1,4 +1,7 @@
 function handle = setGeneralXLabel(axes_all, label, varargin)
+    if ~iscell(axes_all)
+        axes_all = {axes_all};
+    end
     height = 1.5;
 
     posLeft = 1e8;

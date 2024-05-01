@@ -1,4 +1,7 @@
 function handle = setGeneralTitle(axes_all, label, varargin)
+    if ~iscell(axes_all)
+        axes_all = {axes_all};
+    end
     height = 0.8;
 
     posLeft = 1e8;
