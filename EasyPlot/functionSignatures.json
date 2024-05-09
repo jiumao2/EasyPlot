@@ -415,9 +415,10 @@
    {
       "inputs":
       [
-         {"name":"spike_times", "kind":"optional"},
-         {"name":"tStart", "kind":"namevalue", "type":"numeric"},
-         {"name":"tEnd", "kind":"namevalue", "type":"numeric"},
+         {"name":"spike_times", "kind":"required", "type":"numeric"},
+         {"name":"event_times", "kind":"required", "type":"numeric"},
+         {"name":"tPre", "kind":"namevalue", "type":"numeric"},
+         {"name":"tPost", "kind":"namevalue", "type":"numeric"},
          {"name":"Height", "kind":"namevalue", "type":"numeric"},
          {"name":"Width", "kind":"namevalue", "type":"numeric"}
       ]
