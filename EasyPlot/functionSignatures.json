@@ -685,7 +685,9 @@
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
          {"name":"Interpreter", "kind":"namevalue", "type":"choices={'tex','latex','none'}"},
-         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"lineLength", "kind":"namevalue", "type":"numeric"},
+         {"name":"lineWidth", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
@@ -810,7 +812,7 @@
       ]
    },
 
-   "EasyPlot.Units.Violin":
+   "EasyPlot.Utils.Violin":
    {
       "inputs":
       [
@@ -940,7 +942,7 @@
       ]
    },
 
-   "significanceLine":
+   "EasyPlot.significanceLine":
    {
       "inputs":
       [
@@ -958,7 +960,7 @@
       ]
    },
 
-   "xtickangle":
+   "EasyPlot.xtickangle":
    {
       "inputs":
       [
@@ -967,7 +969,7 @@
       ]
    },
 
-   "ytickangle":
+   "EasyPlot.ytickangle":
    {
       "inputs":
       [
@@ -976,7 +978,7 @@
       ]
    },
 
-   "ztickangle":
+   "EasyPlot.ztickangle":
    {
       "inputs":
       [

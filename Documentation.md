@@ -146,6 +146,16 @@ EasyPlot.xtickangle({ax1, ax2, ax3}, 0);
 EasyPlot.setTitle({ax1, ax2, ax3}, 'Title', 'FontSize', 12, 'FontWeight', 'bold');
 ```
 
+#### legend methods
+- It is hard in MATLAB to change the style of the legend. EasyPlot provides a convenient method to change the line and text of the legend.
+```matlab
+% Create a legend
+h_legend = EasyPlot.legend(ax, {'A', 'B', 'C'}, 'location', 'northwest',...
+        'lineLength', 0.1,... % the scale to the original line length
+        'lineWidth', 6,...
+        'fontSize', 7);
+```  
+
 #### Move axes
 ```matlab
 % Move the axes to the right by 1 cm
