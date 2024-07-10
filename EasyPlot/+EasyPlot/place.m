@@ -6,10 +6,10 @@ function place(axes_all, reference, location)
         right_ref = -Inf;
         for k = 1:size(reference, 1)
             for j = 1:size(reference, 2)
-                top_this = reference{k,j}.Position(2)+reference{k,j}.Position(4);
-                bottom_this = reference{k,j}.Position(2);
-                left_this = reference{k,j}.Position(1);
-                right_this = reference{k,j}.Position(1)+reference{k,j}.Position(3);
+                top_this = reference{k,j}.Position(2)+reference{k,j}.Position(4)+reference{k,j}.UserData.MarginTop;
+                bottom_this = reference{k,j}.Position(2)-reference{k,j}.UserData.MarginBottom;
+                left_this = reference{k,j}.Position(1)-reference{k,j}.UserData.MarginLeft;
+                right_this = reference{k,j}.Position(1)+reference{k,j}.Position(3)+reference{k,j}.UserData.MarginRight;
                 
                 top_ref = max(top_ref,top_this);
                 bottom_ref = min(bottom_ref,bottom_this);
@@ -18,10 +18,10 @@ function place(axes_all, reference, location)
             end
         end         
     else
-        top_ref = reference.Position(2)+reference.Position(4);
-        bottom_ref = reference.Position(2);
-        left_ref = reference.Position(1);
-        right_ref = reference.Position(1)+reference.Position(3);
+        top_ref = reference.Position(2)+reference.Position(4)+reference.UserData.MarginTop;
+        bottom_ref = reference.Position(2)-reference.UserData.MarginBottom;
+        left_ref = reference.Position(1)-reference.UserData.MarginLeft;
+        right_ref = reference.Position(1)+reference.Position(3)+reference.UserData.MarginRight;
     end
     
     if ~iscell(axes_all)
