@@ -3,6 +3,7 @@ function exportFigure(fig, filename, varargin)
     dpi = EasyPlot.DefaultValue.ExportDPI;
     figColor = [1,1,1];
     print_renderer = 'painters';
+    printer = 'print'; % or exportgraphics
     if nargin > 2
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'type')
@@ -13,6 +14,8 @@ function exportFigure(fig, filename, varargin)
                 figColor = varargin{k+1};
             elseif strcmpi(varargin{k}, 'renderer')
                 print_renderer = varargin{k+1};
+            elseif strcmpi(varargin{k}, 'printer')
+                printer = varargin{k+1};
             else
                 error('Unknown argument!')
             end
@@ -54,7 +57,19 @@ function exportFigure(fig, filename, varargin)
 
     figColorRaw = fig.Color;
     set(fig, 'Color', figColor);
-    print(fig, filename, formattype, resolution);
+
+    if strcmpi(printer, 'print')
+        print(fig, filename, formattype, resolution);
+    elseif strcmpi(printer, 'exportgraphics')
+        [~, ~, ext] = fileparts(filename);
+        if isempty(ext)
+            filename = [filename, '.', type];
+        end
+
+        exportgraphics(fig, filename,...
+            'BackgroundColor', figColor,...
+            'Resolution', dpi);
+    end
 
     set(fig, 'Renderer', renderer);
     set(fig, 'Color', figColorRaw);
