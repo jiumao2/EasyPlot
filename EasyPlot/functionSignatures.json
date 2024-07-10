@@ -270,7 +270,8 @@
          {"name":"type", "kind":"namevalue", "type":"choices={'png','jpg','tiff','tiffRaw','eps','bmp','pdf'}"},
          {"name":"dpi", "kind":"namevalue", "type":"numeric"},
          {"name":"figColor", "kind":"namevalue", "type":"numeric"},
-         {"name":"renderer", "kind":"namevalue", "type":"choices={'painters','opengl'}"}
+         {"name":"renderer", "kind":"namevalue", "type":"choices={'painters','opengl'}"},
+         {"name":"printer", "kind":"namevalue", "type":"choices={'print','exportgraphics'}"}
       ]
    },
 
@@ -925,6 +926,7 @@
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
+         {"name":"lineWidth", "kind":"namevalue", "type":"numeric"},
          {"name":"xBarLabel", "kind":"namevalue", "type":"char"},
          {"name":"yBarLabel", "kind":"namevalue", "type":"char"},
          {"name":"xBarLength", "kind":"namevalue", "type":"numeric"},
