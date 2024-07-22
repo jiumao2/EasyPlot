@@ -541,6 +541,10 @@
          {"name":"YScale", "kind":"namevalue", "type":"choices={'linear','log'}"},
          {"name":"XLim", "kind":"namevalue", "type":"numeric"},
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"CLim", "kind":"namevalue", "type":"numeric"},
+         {"name":"XLimMode", "kind":"namevalue", "type":"numeric"},
+         {"name":"YLimMode", "kind":"namevalue", "type":"numeric"},
+         {"name":"CYLimMode", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"}
       ]
