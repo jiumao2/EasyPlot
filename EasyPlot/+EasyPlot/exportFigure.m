@@ -1,9 +1,9 @@
-function exportFigure(fig, filename, varargin)
+function img = exportFigure(fig, filename, varargin)
     type = EasyPlot.DefaultValue.ExportFormattype;
     dpi = EasyPlot.DefaultValue.ExportDPI;
     figColor = [1,1,1];
     print_renderer = 'painters';
-    printer = 'print'; % or exportgraphics
+    printer = []; % print or exportgraphics
     if nargin > 2
         for k = 1:2:size(varargin,2)
             if strcmpi(varargin{k},'type')
@@ -35,8 +35,18 @@ function exportFigure(fig, filename, varargin)
         formattype = '-dtiff';
     elseif strcmpi(type,'tiffRaw')
         formattype = '-dtiffn';
+    elseif strcmpi(type,'var')
+        formattype = '-RGBImage';
     else
         error('Unknown format type!')
+    end
+
+    if isempty(printer)
+        if strcmpi(type, 'pdf')
+            printer = 'exportgraphics';
+        else
+            printer = 'print';
+        end
     end
 
     resolution = ['-r', num2str(dpi)];
@@ -59,7 +69,12 @@ function exportFigure(fig, filename, varargin)
     set(fig, 'Color', figColor);
 
     if strcmpi(printer, 'print')
-        print(fig, filename, formattype, resolution);
+        if strcmpi(formattype, '-RGBImage')
+            img = print(fig, filename, formattype, resolution);
+        else
+            print(fig, filename, formattype, resolution);
+            img = [];
+        end
     elseif strcmpi(printer, 'exportgraphics')
         [~, ~, ext] = fileparts(filename);
         if isempty(ext)
@@ -69,6 +84,8 @@ function exportFigure(fig, filename, varargin)
         exportgraphics(fig, filename,...
             'BackgroundColor', figColor,...
             'Resolution', dpi);
+
+        img = [];
     end
 
     set(fig, 'Renderer', renderer);
