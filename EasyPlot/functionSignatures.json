@@ -31,6 +31,7 @@
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"ZAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
@@ -67,8 +68,8 @@
          {"name":"XLim", "kind":"namevalue", "type":"numeric"},
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
-         {"name":"YColor", "kind":"namevalue", "type":"char"}
-
+         {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -267,7 +268,7 @@
       [
          {"name":"fig", "kind":"required"},
          {"name":"filename", "kind":"required", "type":"char"},
-         {"name":"type", "kind":"namevalue", "type":"choices={'png','jpg','tiff','tiffRaw','eps','bmp','pdf'}"},
+         {"name":"type", "kind":"namevalue", "type":"choices={'png','jpg','tiff','tiffRaw','eps','bmp','pdf','var'}"},
          {"name":"dpi", "kind":"namevalue", "type":"numeric"},
          {"name":"figColor", "kind":"namevalue", "type":"numeric"},
          {"name":"renderer", "kind":"namevalue", "type":"choices={'painters','opengl'}"},
@@ -293,6 +294,7 @@
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"ZAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
@@ -329,7 +331,8 @@
          {"name":"XLim", "kind":"namevalue", "type":"numeric"},
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
-         {"name":"YColor", "kind":"namevalue", "type":"char"}
+         {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -350,6 +353,7 @@
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"ZAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
@@ -386,7 +390,8 @@
          {"name":"XLim", "kind":"namevalue", "type":"numeric"},
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
-         {"name":"YColor", "kind":"namevalue", "type":"char"}
+         {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -506,6 +511,7 @@
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"ZAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
@@ -546,7 +552,8 @@
          {"name":"YLimMode", "kind":"namevalue", "type":"numeric"},
          {"name":"CYLimMode", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
-         {"name":"YColor", "kind":"namevalue", "type":"char"}
+         {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 
@@ -568,6 +575,7 @@
          {"name":"YDir", "kind":"namevalue", "type":"choices={'reverse','normal'}"},
          {"name":"XAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"YAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"ZAxisVisible", "kind":"namevalue", "type":"choices={'on','off'}"},
          {"name":"fontName", "kind":"namevalue", "type":"char"},
          {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
          {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
@@ -604,7 +612,8 @@
          {"name":"XLim", "kind":"namevalue", "type":"numeric"},
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
-         {"name":"YColor", "kind":"namevalue", "type":"char"}
+         {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
 

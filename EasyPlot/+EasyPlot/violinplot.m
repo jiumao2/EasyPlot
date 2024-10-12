@@ -142,7 +142,7 @@ if isa(data, 'dataset') || isstruct(data) || istable(data)
         violins(n) = EasyPlot.Utils.Violin(axes, {thisData}, n, varargin{:});
     end
     set(axes, 'XTick', 1:length(catnames), 'XTickLabels', catnames);
-    set(axes,'Box','on');
+%     set(axes,'Box','on');
     return
 elseif iscell(data) && length(data(:))==2 % cell input
     if not(size(data{1},2)==size(data{2},2))
@@ -168,7 +168,7 @@ elseif isnumeric(data) % numeric input
             violins(n) = EasyPlot.Utils.Violin(axes, {thisData}, n, varargin{:});
         end
         set(axes, 'XTick', 1:length(catnames), 'XTickLabels', catnames_labels);
-        set(axes,'Box','on');
+%         set(axes,'Box','on');
         return
     else
         data = {data};
@@ -191,6 +191,6 @@ elseif ismatrix(data{1})
     end
 end
 
-set(axes,'Box','on');
+% set(axes,'Box','on');
 
 end

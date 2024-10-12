@@ -6,6 +6,8 @@ function set(axes_all, varargin)
                     axes_all.XAxis.Visible = varargin{k+1};
                 case 'YAxisVisible'
                     axes_all.YAxis.Visible = varargin{k+1};   
+                case 'ZAxisVisible'
+                    axes_all.ZAxis.Visible = varargin{k+1}; 
                 case 'MarginLeft'
                     axes_all.UserData.MarginLeft = varargin{k+1};
                 case 'MarginRight'
