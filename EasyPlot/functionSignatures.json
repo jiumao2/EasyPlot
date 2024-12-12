@@ -1000,5 +1000,21 @@
          {"name":"axes_all", "kind":"required"},
          {"name":"angle", "kind":"required", "type":"numeric"}
       ]
+   },
+
+   "EasyPlot.stairs":
+   {
+      "inputs":
+      [
+         {"name":"ax", "kind":"required"},
+         {"name":"x", "kind":"required", "type":"numeric"},
+         {"name":"y", "kind":"required", "type":"numeric"},
+         {"name":"lineSpec", "kind":"optional", "type":"char"},
+         {"name":"lineWidth", "kind":"namevalue", "type":"numeric"},
+         {"name":"Color", "kind":"namevalue"},
+         {"name":"LineStyle", "kind":"namevalue", "type":"choices={'-','--',':','-.'}"},
+         {"name":"Marker", "kind":"namevalue", "type":"char"},
+         {"name":"MarkerSize", "kind":"namevalue", "type":"numeric"}
+      ]
    }
 }
