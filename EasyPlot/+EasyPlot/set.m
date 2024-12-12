@@ -35,6 +35,8 @@ function set(axes_all, varargin)
                         axes_all{i_row,i_col}.XAxis.Visible = varargin{k+1};
                     case 'YAxisVisible'
                         axes_all{i_row,i_col}.YAxis.Visible = varargin{k+1};   
+                    case 'ZAxisVisible'
+                        axes_all{i_row,i_col}.ZAxis.Visible = varargin{k+1};  
                     case 'MarginLeft'
                         axes_all{i_row,i_col}.UserData.MarginLeft = varargin{k+1};
                     case 'MarginRight'

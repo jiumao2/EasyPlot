@@ -1,20 +1,29 @@
-# EasyPlot
+# EasyPlot: A MATLAB package for making scientific figures easily
+
+[![View EasyPlot on GitHub](https://img.shields.io/badge/GitHub-EasyPlot-blue.svg)](https://github.com/jiumao2/EasyPlot)
 [![View EasyPlot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)   
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)  
 Save your time when making scientific figures with MATLAB
+
 ## Highlights  
+
 - Similiar to the MATLAB grammar and support for all raw MATLAB functions
 - Support for auto-completion and you do not need to remember the names of the functions and arguments
 - Better default settings (e.g. NextPlot, Units, etc.)  
 - Easier to layout multiple axes in a single figure
 - Lots of useful functions frequently used in scientific figures
+
 ## Installation
+
 - Download the repository and add the `EasyPlot` folder to your MATLAB path
 - Use the codes simply by enter `EasyPlot.` and choose the function you want (using auto-completion)
 
 ## A simple example
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)   
+
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)  
+
 - A figure with 2 heatmaps  
+
 ```matlab
 % create two 10x10 matrices
 rng(1); % set the random seed
@@ -60,8 +69,10 @@ EasyPlot.markAxes(fig, {ax1, ax2}, {'A','B'},...
 % export the figure
 EasyPlot.cropFigure(fig);
 EasyPlot.exportFigure(fig, 'test.png');
-```  
+```
+
 ![test.png](./doc/test.png)
 
 ## Documentation
+
 - See [here](./Documentation.md) to learn about how to use EasyPlot
