@@ -70,6 +70,7 @@
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Color", "kind":"namevalue"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
@@ -179,7 +180,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
    "EasyPlot.setYLabelRow":
@@ -187,7 +191,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
 
@@ -196,7 +203,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
 
@@ -205,7 +215,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },   
 
@@ -214,7 +227,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
 
@@ -223,7 +239,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
 
@@ -232,7 +251,10 @@
       "inputs":
       [
          {"name":"all_axes", "kind":"required"},
-         {"name":"label", "kind":"required", "type":"char"}
+         {"name":"label", "kind":"required", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"}
       ]
    },
 
@@ -334,6 +356,7 @@
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Color", "kind":"namevalue"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
@@ -394,6 +417,7 @@
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Color", "kind":"namevalue"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
@@ -416,7 +440,12 @@
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
          {"name":"Ticks", "kind":"namevalue", "type":"numeric"},
-         {"name":"TickLabels", "kind":"namevalue"}
+         {"name":"TickLabels", "kind":"namevalue"},
+         {"name":"fontName", "kind":"namevalue", "type":"char"},
+         {"name":"fontSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"fontWeight", "kind":"namevalue", "type":"choices={'bold','normal'}"},
+         {"name":"tickdir", "kind":"namevalue", "type":"choices={'in','out','both','none'}"},
+         {"name":"ticklength", "kind":"namevalue", "type":"numeric"}
       ]
    },
 
@@ -557,6 +586,7 @@
          {"name":"CYLimMode", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Color", "kind":"namevalue"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
@@ -618,6 +648,7 @@
          {"name":"YLim", "kind":"namevalue", "type":"numeric"},
          {"name":"XColor", "kind":"namevalue", "type":"char"},
          {"name":"YColor", "kind":"namevalue", "type":"char"},
+         {"name":"Color", "kind":"namevalue"},
          {"name":"Box", "kind":"namevalue", "type":"choices={'on','off'}"}
       ]
    },
@@ -1020,6 +1051,16 @@
          {"name":"LineStyle", "kind":"namevalue", "type":"choices={'-','--',':','-.'}"},
          {"name":"Marker", "kind":"namevalue", "type":"char"},
          {"name":"MarkerSize", "kind":"namevalue", "type":"numeric"}
+      ]
+   },
+
+   "EasyPlot.venn":
+   {
+      "inputs":
+      [
+         {"name":"ax", "kind":"required"},
+         {"name":"A", "kind":"required", "type":"numeric"},
+         {"name":"I", "kind":"required", "type":"numeric"}
       ]
    }
 }
