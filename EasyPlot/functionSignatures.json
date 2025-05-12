@@ -11,7 +11,14 @@
          {"name":"MarginLeft", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginRight", "kind":"namevalue", "type":"numeric"},
          {"name":"MarginTop", "kind":"namevalue", "type":"numeric"},
-         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"}
+         {"name":"MarginBottom", "kind":"namevalue", "type":"numeric"},
+         {"name":"Visible", "kind":"namevalue", "type":"choices={'on','off'}"},
+         {"name":"Color", "kind":"namevalue", "type":"char"},
+         {"name":"Units", "kind":"namevalue", "type":"choices={'centimeters','normalized','inches','pixels','points','characters'}"},
+         {"name":"PaperPositionMode", "kind":"namevalue", "type":"choices={'auto','manual'}"},
+         {"name":"PaperPosition", "kind":"namevalue", "type":"numeric"},
+         {"name":"PaperSize", "kind":"namevalue", "type":"numeric"},
+         {"name":"PaperOrientation", "kind":"namevalue", "type":"choices={'portrait','landscape'}"}
       ]
    },
 
