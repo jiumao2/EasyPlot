@@ -1,78 +1,71 @@
-# EasyPlot: A MATLAB package for making scientific figures easily
+# EasyPlot: Shorter MATLAB code for publication-ready scientific figures
 
-[![View EasyPlot on GitHub](https://img.shields.io/badge/GitHub-EasyPlot-blue.svg)](https://github.com/jiumao2/EasyPlot)
-[![View EasyPlot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)  
-Save your time when making scientific figures with MATLAB
+[![GitHub](https://img.shields.io/badge/GitHub-EasyPlot-blue.svg)](https://github.com/jiumao2/EasyPlot)
+[![MATLAB File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://ww2.mathworks.cn/matlabcentral/fileexchange/156462-easyplot)
+[![Docs](https://img.shields.io/badge/docs-Read%20the%20Docs-2a7fff)](https://easyplot.readthedocs.io/en/latest/)
 
-## Highlights  
+EasyPlot substantially shortens the amount of MATLAB code needed to make publication-ready scientific figures. It keeps native MATLAB plotting syntax familiar while making multi-panel layout, consistent styling, and figure export much faster.
 
-- Similiar to the MATLAB grammar and support for all raw MATLAB functions
-- Support for auto-completion and you do not need to remember the names of the functions and arguments
-- Better default settings (e.g. NextPlot, Units, etc.)  
-- Easier to layout multiple axes in a single figure
-- Lots of useful functions frequently used in scientific figures
+![EasyPlot publication workflow figure](./docs/tutorials/_images/publication_workflow.png)
 
-## Installation
+## Use with Codex and Claude
 
-- Download the repository and add the `EasyPlot` folder to your MATLAB path
-- Use the codes simply by enter `EasyPlot.` and choose the function you want (using auto-completion)
+This repo includes a local skill for writing publication-ready EasyPlot MATLAB code:
+[`skills/EasyPlot-MATLAB`](./skills/EasyPlot-MATLAB).
 
-## A simple example
+For Codex:
+- Invoke the skill as `$easyplot-matlab`.
+- Example prompt: `Use $easyplot-matlab to write a 2x2 EasyPlot MATLAB figure script with explicit labels, no overlaps, and PNG/PDF export into Figure.`
 
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jiumao2/EasyPlot&file=demo.mlx)  
+For Claude:
+- Point Claude directly to [`skills/EasyPlot-MATLAB/SKILL.md`](./skills/EasyPlot-MATLAB/SKILL.md) and ask it to follow that workflow.
+- Example prompt: `Read and follow skills/EasyPlot-MATLAB/SKILL.md. Write a long linear EasyPlot MATLAB script for a publication-ready 2x2 figure with explicit scales, labels, and overlap-free layout.`
 
-- A figure with 2 heatmaps  
+## Why EasyPlot for scientific figures
+
+- Substantially shorten the code needed for publication-ready figures.
+- Keep native MATLAB plotting calls (`plot`, `imagesc`, `scatter`, etc.).
+- Build panel layouts using relative placement instead of manual position math.
+- Apply labels, limits, and ticks across many axes with one command.
+- Export clean, size-controlled figures for papers and presentations.
+
+## 60-second quick start
+
+1. Download this repository.
+2. Add the `EasyPlot` folder to your MATLAB path.
+3. Run the example below.
 
 ```matlab
-% create two 10x10 matrices
-rng(1); % set the random seed
-x1 = rand(10)-0.3; 
-x2 = rand(10)-0.7;
+fig = EasyPlot.figure();
+ax = EasyPlot.axes(fig, 'Width', 6, 'Height', 4);
 
-% create a figure with two axes
-fig = EasyPlot.figure(); % create a figure in EasyPlot style
-ax1 = EasyPlot.axes(fig,... % create an axes in EasyPlot style
-    'Height', 3,... % in centimeters
-    'Width', 3,...
-    'MarginBottom', 0.8);
-% create the second axes on the right of the first axes
-ax2 = EasyPlot.createAxesAgainstAxes(fig, ax1, 'right',...
-    'YAxisVisible', 'off');
+x = 0:0.01:2*pi;
+plot(ax, x, sin(x), 'LineWidth', 1.5);
 
-% plot the matrices the same way as in MATLAB
-imagesc(ax1, x1);
-imagesc(ax2, x2);
-
-% set multiple xlabel and ylabel together
-EasyPlot.setXLabelRow({ax1, ax2}, 'X');
-EasyPlot.setYLabelRow({ax1, ax2}, 'Y');
-
-% set the limits of the multiple axes together
-EasyPlot.setXLim({ax1, ax2}, [0.5,10.5]);
-EasyPlot.setYLim({ax1, ax2}, [0.5,10.5]);
-% set the color limits that covers both axes
-EasyPlot.setCLim({ax1, ax2}, 'largest');
-
-% set the colormap and colorbar
-% use the same colormap for both axes and set the white color for zero
-EasyPlot.colormap({ax1, ax2}, EasyPlot.ColorMap.Diverging.seismic, 'zeroCenter', 'on');
-EasyPlot.colorbar(ax2,...
-    'label', 'Color bar',...
-    'MarginRight', 1);
-
-% mark the axes
-EasyPlot.markAxes(fig, {ax1, ax2}, {'A','B'},...
-    'xShift', 0.5,...
-    'MarginTop', 0);
-
-% export the figure
+xlabel(ax, 'X');
+ylabel(ax, 'sin(X)');
 EasyPlot.cropFigure(fig);
-EasyPlot.exportFigure(fig, 'test.png');
+EasyPlot.exportFigure(fig, 'quickstart.png');
 ```
 
-![test.png](./doc/test.png)
+## Learn Fast
 
-## Documentation
+- Publication workflow: [Write publication-ready figure scripts](https://easyplot.readthedocs.io/en/latest/tutorials/publication-workflow.html)
+- Getting started: [Quick onboarding](https://easyplot.readthedocs.io/en/latest/getting_started.html)
+- Tutorials: [Step-by-step workflows](https://easyplot.readthedocs.io/en/latest/tutorials/index.html)
+- API overview: [Core functions](https://easyplot.readthedocs.io/en/latest/api/index.html)
+- Example script: [`scripts/publication_workflow_example.m`](./scripts/publication_workflow_example.m)
+- AI skill: [`skills/EasyPlot-MATLAB`](./skills/EasyPlot-MATLAB)
 
-- See [here](./Documentation.md) to learn about how to use EasyPlot
+## Core capabilities
+
+- Figure and axes creation with better defaults.
+- Grid and relative layout helpers (`createGridAxes`, `createAxesAgainstAxes`, `align`, `place`).
+- Batch axis controls (`setXLim`, `setYLim`, `setCLim`, shared labels and ticks).
+- Figure finishing (`markAxes`, `scalebar`, `colorbar`, `cropFigure`, `exportFigure`).
+
+## Citation and license
+
+- License: [MIT](./LICENSE)
+- If EasyPlot helps your publication workflow, please star the repository.
+
