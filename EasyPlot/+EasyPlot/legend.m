@@ -27,6 +27,12 @@ function handle = legend(ax, legendNames, varargin)
                 lineWidth = varargin{k+1};
             elseif strcmpi(varargin{k},'markerSize')
                 markerSize = varargin{k+1};
+            elseif strcmpi(varargin{k},'fontSize')
+                fontSize = varargin{k+1};
+            elseif strcmpi(varargin{k},'fontName')
+                fontName = varargin{k+1};
+            elseif strcmpi(varargin{k},'fontWeight')
+                fontWeight = varargin{k+1};
             end
         end
     end    
