@@ -1,4 +1,15 @@
 function xLimOut = setXLim(all_axes,mode)
+%SETXLIM Set or harmonize x-limits across multiple axes.
+% Syntax:
+%   xLim = EasyPlot.setXLim(allAxes, mode)
+% Inputs:
+%   allAxes: Axes handle or cell array of axes.
+%   mode: Numeric [xmin xmax] or 'largest' to use combined span.
+% Outputs:
+%   xLim: Final x-limit applied.
+% Example:
+%   EasyPlot.setXLim({ax1, ax2}, 'largest');
+% See also: xlim, EasyPlot.setYLim, EasyPlot.setCLim
     if nargin<2
         mode = 'largest';
     end

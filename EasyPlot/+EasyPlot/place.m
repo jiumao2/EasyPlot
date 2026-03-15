@@ -1,4 +1,16 @@
 function place(axes_all, reference, location)
+%PLACE Place axes adjacent to a reference axes with margin-aware spacing.
+% Syntax:
+%   EasyPlot.place(axesAll, reference, location)
+% Inputs:
+%   axesAll: Axes handle or cell array of axes to move.
+%   reference: Reference axes handle or cell array.
+%   location: 'left', 'right', 'top', or 'bottom'.
+% Outputs:
+%   None.
+% Example:
+%   EasyPlot.place(ax2, ax1, 'right');
+% See also: EasyPlot.align, EasyPlot.move, EasyPlot.copyAxes
     if iscell(reference)
         top_ref = -Inf;
         bottom_ref = Inf;

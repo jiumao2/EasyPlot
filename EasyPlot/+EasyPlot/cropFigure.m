@@ -1,4 +1,14 @@
 function cropFigure(fig)
+%CROPFIGURE Resize figure canvas to tightly include axes and margins.
+% Syntax:
+%   EasyPlot.cropFigure(fig)
+% Inputs:
+%   fig: Figure handle.
+% Outputs:
+%   None.
+% Example:
+%   EasyPlot.cropFigure(fig);
+% See also: EasyPlot.exportFigure, EasyPlot.figure, EasyPlot.axes
     drawnow;
     top = -Inf;
     bottom = Inf;

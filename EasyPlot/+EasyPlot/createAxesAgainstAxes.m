@@ -1,4 +1,16 @@
 function handle = createAxesAgainstAxes(fig, ax, location, varargin)
+%CREATEAXESAGAINSTAXES Create a new axes adjacent to a reference axes.
+% Syntax:
+%   axNew = EasyPlot.createAxesAgainstAxes(fig, axRef, location, Name, Value, ...)
+% Inputs:
+%   fig: Figure handle.
+%   axRef: Reference axes handle.
+%   location: 'left', 'right', 'top', or 'bottom'.
+% Outputs:
+%   axNew: New axes handle with inherited size/margins from reference axes.
+% Example:
+%   ax2 = EasyPlot.createAxesAgainstAxes(fig, ax1, 'right', 'YAxisVisible', 'off');
+% See also: EasyPlot.place, EasyPlot.copyAxes, EasyPlot.axes
     handle = EasyPlot.axes(fig,...
         "Width", ax.Position(3),...
         "Height", ax.Position(4));

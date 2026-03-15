@@ -1,4 +1,16 @@
 function handle = markAxes(fig, axes_all, marker, varargin)
+%MARKAXES Add panel markers (e.g., A/B/C) to axes in a figure.
+% Syntax:
+%   h = EasyPlot.markAxes(fig, axesAll, marker, Name, Value, ...)
+% Inputs:
+%   fig: Figure handle.
+%   axesAll: Axes handle or cell array of axes.
+%   marker: Marker text or list of marker strings.
+% Outputs:
+%   h: Text handle(s) for marker labels.
+% Example:
+%   EasyPlot.markAxes(fig, {ax1, ax2}, {'A', 'B'});
+% See also: text, EasyPlot.align, EasyPlot.cropFigure
     xShift = 0;
     yShift = 0;
     fontName = EasyPlot.DefaultValue.FontName;

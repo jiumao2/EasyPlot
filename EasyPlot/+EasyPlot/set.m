@@ -1,4 +1,15 @@
 function set(axes_all, varargin)
+%SET Set properties on one or multiple axes with EasyPlot margin support.
+% Syntax:
+%   EasyPlot.set(axesAll, Name, Value, ...)
+% Inputs:
+%   axesAll: Axes handle or cell array of axes.
+%   Name-Value pairs: standard axes properties and EasyPlot margin properties.
+% Outputs:
+%   None.
+% Example:
+%   EasyPlot.set({ax1, ax2}, 'MarginLeft', 0.8, 'FontSize', 9);
+% See also: set, EasyPlot.axes, EasyPlot.setMargin
     if ~iscell(axes_all)
         for k = 1:2:size(varargin,2)
             switch varargin{k}

@@ -1,11 +1,17 @@
 function [handle_patch, handle_line] = plotShaded(ax, x, y, varargin)
-%PLOTSHADED Plot a line with shaded area below
-%
-% EasyPlot.plotShaded(ax, [2,3,5], [1,0,2;3,4,5]);
-% EasyPlot.plotShaded(ax, [1,0,2;3,4,5], [2,3,5], 'axis', 'Y');
-% x: 1xn vector if axis == 'X';
-% y: 2xn matrix composed of two vectors which defines the area of the patch
-
+%PLOTSHADED Plot a line with a shaded interval region.
+% Syntax:
+%   [hp, hl] = EasyPlot.plotShaded(ax, x, y, Name, Value, ...)
+% Inputs:
+%   ax: Target axes handle.
+%   x, y: Line and interval-defining arrays (orientation controlled by 'axis' option).
+%   Name-Value pairs: alpha, axis, shadedColor, lineColor, lineWidth, marker, drawLine.
+% Outputs:
+%   hp: Patch handle for shaded region.
+%   hl: Line handle for center trace (if enabled).
+% Example:
+%   [hp, hl] = EasyPlot.plotShaded(ax, x, [yLow; yHigh], 'alpha', 0.2, 'drawLine', 'on');
+% See also: patch, plot, EasyPlot.boundedLine
 alpha = 0.25;
 axis = 'X';
 lineWidth = EasyPlot.DefaultValue.LineWidth;

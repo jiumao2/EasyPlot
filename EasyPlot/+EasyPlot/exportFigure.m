@@ -1,4 +1,15 @@
 function img = exportFigure(fig, filename, varargin)
+%EXPORTFIGURE Export figure to file with EasyPlot defaults.
+% Syntax:
+%   img = EasyPlot.exportFigure(fig, filename, Name, Value, ...)
+% Inputs:
+%   fig: Figure handle.
+%   filename: Output file path (extension controls format).
+% Outputs:
+%   img: Exported image matrix when available.
+% Example:
+%   EasyPlot.exportFigure(fig, 'result.png');
+% See also: EasyPlot.cropFigure, exportgraphics, imwrite
     type = EasyPlot.DefaultValue.ExportFormattype;
     dpi = EasyPlot.DefaultValue.ExportDPI;
     figColor = [1,1,1];

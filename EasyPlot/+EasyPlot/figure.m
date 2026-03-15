@@ -1,4 +1,14 @@
 function handle = figure(varargin)
+%FIGURE Create an EasyPlot-styled figure with default rendering settings.
+% Syntax:
+%   fig = EasyPlot.figure(Name, Value, ...)
+% Inputs:
+%   Name-Value pairs: standard figure properties plus MarginLeft/Right/Top/Bottom, Width, Height.
+% Outputs:
+%   fig: Figure handle with EasyPlot defaults and margin metadata in fig.UserData.
+% Example:
+%   fig = EasyPlot.figure('Width', 8, 'Height', 6);
+% See also: EasyPlot.axes, EasyPlot.cropFigure, EasyPlot.exportFigure
     handle = figure(...
         "Units",EasyPlot.DefaultValue.Units,...
         "NextPlot",EasyPlot.DefaultValue.NextPlot,...

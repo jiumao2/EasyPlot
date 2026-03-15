@@ -1,4 +1,16 @@
 function axes_all = createGridAxes(fig, nRow, nColumn, varargin)
+%CREATEGRIDAXES Create a regular grid of axes with shared geometry defaults.
+% Syntax:
+%   axAll = EasyPlot.createGridAxes(fig, nRow, nColumn, Name, Value, ...)
+% Inputs:
+%   fig: Figure handle.
+%   nRow, nColumn: Grid size.
+%   Name-Value pairs: Width, Height, margins, visibility, and other axes properties.
+% Outputs:
+%   axAll: Cell array of axes handles sized nRow-by-nColumn.
+% Example:
+%   axAll = EasyPlot.createGridAxes(fig, 2, 3, 'Width', 3, 'Height', 3);
+% See also: EasyPlot.axes, EasyPlot.align, EasyPlot.place
 marginLeft = EasyPlot.DefaultValue.AxesMarginLeft;
 marginRight = EasyPlot.DefaultValue.AxesMarginRight;
 marginTop = EasyPlot.DefaultValue.AxesMarginTop;

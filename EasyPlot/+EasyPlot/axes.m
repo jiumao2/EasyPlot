@@ -1,4 +1,15 @@
 function handle = axes(fig, varargin)
+%AXES Create an EasyPlot-styled axes inside a figure.
+% Syntax:
+%   ax = EasyPlot.axes(fig, Name, Value, ...)
+% Inputs:
+%   fig: Figure handle created by EasyPlot.figure or MATLAB figure.
+%   Name-Value pairs: standard axes properties plus MarginLeft/Right/Top/Bottom, Width, Height, XAxisVisible, YAxisVisible.
+% Outputs:
+%   ax: Axes handle configured with EasyPlot defaults.
+% Example:
+%   fig = EasyPlot.figure(); ax = EasyPlot.axes(fig, 'Width', 4, 'Height', 3);
+% See also: EasyPlot.figure, EasyPlot.set, EasyPlot.createGridAxes
     handle = axes(fig,...
         'Units',EasyPlot.DefaultValue.Units,...
         'NextPlot',EasyPlot.DefaultValue.NextPlot,...

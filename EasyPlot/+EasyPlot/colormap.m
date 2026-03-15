@@ -1,4 +1,15 @@
 function colormap(axes_all, cmap, varargin)
+%COLORMAP Apply colormap to one or more axes with optional zero-centering.
+% Syntax:
+%   EasyPlot.colormap(axesAll, cmap, Name, Value, ...)
+% Inputs:
+%   axesAll: Axes handle or cell array of axes.
+%   cmap: Colormap matrix or EasyPlot colormap function output.
+% Outputs:
+%   None.
+% Example:
+%   EasyPlot.colormap({ax1, ax2}, EasyPlot.ColorMap.Diverging.seismic, 'zeroCenter', 'on');
+% See also: colormap, EasyPlot.setCLim, EasyPlot.colorbar
     zeroCenter = 'off';
     zeroPosition = 0;
     if nargin > 2

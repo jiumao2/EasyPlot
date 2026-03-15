@@ -1,4 +1,15 @@
 function cLimOut = setCLim(all_axes,mode)
+%SETCLIM Set or harmonize color limits across multiple axes.
+% Syntax:
+%   cLim = EasyPlot.setCLim(allAxes, mode)
+% Inputs:
+%   allAxes: Axes handle or cell array of axes.
+%   mode: Numeric [cmin cmax] or 'largest' for shared global limits.
+% Outputs:
+%   cLim: Final color limit applied.
+% Example:
+%   EasyPlot.setCLim({ax1, ax2}, 'largest');
+% See also: clim, EasyPlot.colormap, EasyPlot.colorbar
     if nargin<2
         mode = 'largest';
     end

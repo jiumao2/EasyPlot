@@ -1,4 +1,16 @@
 function align(axes_all, reference, position)
+%ALIGN Align axes against a reference axes or axes group.
+% Syntax:
+%   EasyPlot.align(axesAll, reference, position)
+% Inputs:
+%   axesAll: Axes handle or cell array of axes.
+%   reference: Reference axes handle or cell array.
+%   position: 'left', 'right', 'top', 'bottom', 'horizontalCenter', or 'verticalCenter'.
+% Outputs:
+%   None.
+% Example:
+%   EasyPlot.align({ax1, ax2}, ax3, 'left');
+% See also: EasyPlot.place, EasyPlot.move, EasyPlot.createGridAxes
     if iscell(reference)
         if any(strcmpi({'left', 'right', 'top', 'bottom'}, position))
             idx = EasyPlot.Utils.getSideAxes(reference, position);
