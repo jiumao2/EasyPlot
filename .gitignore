@@ -3,5 +3,6 @@
 scripts/
 site/
 Legacy/
-doc/_build
+Figure/
+docs/_build/
 .codex/
