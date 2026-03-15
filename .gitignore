@@ -1,2 +1,7 @@
 *.asv
 *.pptx
+scripts/
+site/
+Legacy/
+doc/_build
+.codex/
