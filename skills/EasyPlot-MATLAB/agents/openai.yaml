@@ -1,0 +1,4 @@
+interface:
+  display_name: "EasyPlot MATLAB"
+  short_description: "Write publication-ready EasyPlot MATLAB figures"
+  default_prompt: "Use $easyplot-matlab to write or refine a publication-ready MATLAB figure script with EasyPlot, explicit labels, and overlap-free layout."
