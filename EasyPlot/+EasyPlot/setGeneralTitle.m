@@ -8,14 +8,18 @@ function handle = setGeneralTitle(axes_all, label, varargin)
     posRight = -1e8;
 
     fig = axes_all{1}.Parent;
-    for k = 1:length(axes_all)
-        posLeft = min(posLeft, axes_all{k}.Position(1));
-        posRight = max(posRight, axes_all{k}.Position(1)+axes_all{k}.Position(3));
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
+            posLeft = min(posLeft, axes_all{k,j}.Position(1));
+            posRight = max(posRight, axes_all{k,j}.Position(1)+axes_all{k,j}.Position(3));
+        end
     end
 
     posTop = -1e8;
-    for k = 1:length(axes_all)
-        posTop = max(posTop, axes_all{k}.Position(2)+axes_all{k}.Position(4));
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
+            posTop = max(posTop, axes_all{k,j}.Position(2)+axes_all{k,j}.Position(4));
+        end
     end
 
     pos = [posLeft-1,posTop,posRight-posLeft+2,height];

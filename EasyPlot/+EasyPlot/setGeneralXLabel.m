@@ -8,11 +8,19 @@ function handle = setGeneralXLabel(axes_all, label, varargin)
     posRight = -1e8;
 
     fig = axes_all{1}.Parent;
-    for k = 1:length(axes_all)
-        posLeft = min(posLeft, axes_all{k}.Position(1));
-        posRight = max(posRight, axes_all{k}.Position(1)+axes_all{k}.Position(3));
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
+            posLeft = min(posLeft, axes_all{k,j}.Position(1));
+            posRight = max(posRight, axes_all{k,j}.Position(1)+axes_all{k,j}.Position(3));
+        end
     end
-    posBottom = axes_all{1}.Position(2)-height;
+
+    posBottom = 1e8;
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
+            posBottom = min(posBottom, axes_all{k,j}.Position(2)-height);
+        end
+    end
 
     pos = [posLeft-1,posBottom,posRight-posLeft+2,height];
     

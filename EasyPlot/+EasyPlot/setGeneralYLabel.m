@@ -18,11 +18,21 @@ function handle = setGeneralYLabel(axes_all, label, varargin)
     posBottom = 1e8;
 
     fig = axes_all{1}.Parent;
-    for k = 1:length(axes_all)
-        posTop = max(posTop, axes_all{k}.Position(2)+axes_all{k}.Position(4));
-        posBottom = min(posBottom, axes_all{k}.Position(2));
+
+    for k = size(axes_all, 1)
+        for j = size(axes_all, 2)
+            posTop = max(posTop, axes_all{k, j}.Position(2)+axes_all{k, j}.Position(4));
+            posBottom = min(posBottom, axes_all{k, j}.Position(2));
+        end
     end
-    posLeft = axes_all{1}.Position(1)-width;
+
+    posLeft = 1e8;
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
+            posLeft = min(posLeft, axes_all{k,j}.Position(1)-width);
+        end
+    end
+
     pos_vertical_center = 0.5*(posTop+posBottom);
 
     % compute the position after rotating 90 degree at left-bottom corner
