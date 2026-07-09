@@ -9,7 +9,7 @@ Installation
 
 1. Download this repository.
 2. Add the ``EasyPlot`` folder to your MATLAB path.
-3. Run ``scripts/publication_workflow_example.m`` or ``scripts/generate_tutorial_figures.m``.
+3. Run ``scripts/publication_workflow_example.m``.
 
 First Figure in 60 Seconds
 --------------------------

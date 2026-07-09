@@ -99,6 +99,8 @@ function handle = legend(ax, legendNames, varargin)
 
             elseif strcmpi(varargin{k},'lineLength')
 
+            elseif strcmpi(varargin{k},'markerSize')
+
             else
                 EasyPlot.set(handle,varargin{k},varargin{k+1});
             end

@@ -16,13 +16,15 @@ function cLimOut = setCLim(all_axes,mode)
     cLimOut = nan(1,2);
 
     if ~iscell(all_axes)
-        if ~isnumeric(mode) || length(mode)~=2
-            error('Wrong mode!')
-        else
+        if isnumeric(mode) && length(mode)==2
             cLimOut = mode;
+            set(all_axes,'CLim',cLimOut);
+            return
+        elseif ischar(mode) || isstring(mode)
+            all_axes = {all_axes};
+        else
+            error('Wrong mode!')
         end
-        set(all_axes,'CLim',cLimOut);
-        return
     end    
 
     if isnumeric(mode)

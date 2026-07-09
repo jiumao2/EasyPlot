@@ -1,6 +1,7 @@
 *.asv
 *.pptx
-scripts/
+scripts/*
+!scripts/publication_workflow_example.m
 site/
 Legacy/
 Figure/

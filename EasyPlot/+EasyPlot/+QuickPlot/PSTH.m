@@ -87,8 +87,16 @@ function PSTH(spike_times, trigger_times, varargin)
         trialspxmat = spkmat;
         trigtimes(inan) = [];
          
-        [spkhistos, ts ] = spikehisto(spkmat,1000, (pre+post)/binwidth);
-        ts = ts*1000 - pre;
+        n_bins = round((pre+post)/binwidth);
+        period = size(spkmat, 1);
+        allspikes = mean(spkmat, 2, 'omitnan');
+        spkhistos = zeros(1, n_bins);
+        for i_bin = 1:n_bins
+            from = floor((i_bin-1)*period/n_bins)+1;
+            to = floor(i_bin*period/n_bins);
+            spkhistos(i_bin) = sum(allspikes(from:to), 'omitnan')/(period/n_bins/1000);
+        end
+        ts = ((1:n_bins)-0.5)*period/n_bins - pre;
          
         psth = spkhistos;
         tpsth = ts; 

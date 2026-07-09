@@ -38,7 +38,7 @@ function img = exportFigure(fig, filename, varargin)
     if strcmpi(type,'png')
         formattype = '-dpng';
     elseif strcmpi(type,'jpg')
-        formattype = '-djepg';
+        formattype = '-djpeg';
     elseif strcmpi(type,'pdf')
         formattype = '-dpdf';
     elseif strcmpi(type,'bmp')

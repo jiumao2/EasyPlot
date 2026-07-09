@@ -16,13 +16,15 @@ function xLimOut = setXLim(all_axes,mode)
     xLimOut = nan(1,2);
 
     if ~iscell(all_axes)
-        if ~isnumeric(mode) || length(mode)~=2
-            error('Wrong mode!')
-        else
+        if isnumeric(mode) && length(mode)==2
             xLimOut = mode;
+            set(all_axes,'XLim',xLimOut);
+            return
+        elseif ischar(mode) || isstring(mode)
+            all_axes = {all_axes};
+        else
+            error('Wrong mode!')
         end
-        set(all_axes,'XLim',xLimOut);
-        return
     end
 
     if isnumeric(mode)

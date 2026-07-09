@@ -19,8 +19,8 @@ function handle = setGeneralYLabel(axes_all, label, varargin)
 
     fig = axes_all{1}.Parent;
 
-    for k = size(axes_all, 1)
-        for j = size(axes_all, 2)
+    for k = 1:size(axes_all, 1)
+        for j = 1:size(axes_all, 2)
             posTop = max(posTop, axes_all{k, j}.Position(2)+axes_all{k, j}.Position(4));
             posBottom = min(posBottom, axes_all{k, j}.Position(2));
         end

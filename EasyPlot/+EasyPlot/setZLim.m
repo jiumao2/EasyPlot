@@ -5,13 +5,15 @@ function zLimOut = setZLim(all_axes,mode)
     zLimOut = nan(1,2);
 
     if ~iscell(all_axes)
-        if ~isnumeric(mode) || length(mode)~=2
-            error('Wrong mode!')
-        else
+        if isnumeric(mode) && length(mode)==2
             zLimOut = mode;
+            set(all_axes,'ZLim',zLimOut);
+            return
+        elseif ischar(mode) || isstring(mode)
+            all_axes = {all_axes};
+        else
+            error('Wrong mode!')
         end
-        set(all_axes,'ZLim',zLimOut);
-        return
     end
 
     if isnumeric(mode)
